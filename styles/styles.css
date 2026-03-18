@@ -1,0 +1,208 @@
+/* =========================
+RESET / BASE
+Mobile first
+========================= */
+
+/* Sélectionne tous les éléments + pseudo éléments */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* inclut padding + border dans width/height */
+}
+
+html {
+    font-size: 100%; /* définit la taille de base du texte du site sur 100% = valeur par défaut du navigateur. Souvent 1rem (16px) */
+    -webkit-text-size-adjust: 100%; /* évite zoom automatique sur iOS */
+}
+
+body {
+    margin: 0; /* enlève marge par défaut du navigateur */
+    min-height: 100vh; /* hauteur minimale = écran entier */
+    line-height: 1.5; /* espace vertical entre les lignes de texte */
+}
+
+/* Cible tous les médias */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block; /* enlève les espaces inline (surtout images) */
+    max-width: 100%; /* empêche de dépasser du parent */
+}
+
+/* Inputs héritent de la typo du site */
+input,
+button,
+textarea,
+select {
+    font: inherit; /* récupère font-family, size, etc du parent */
+}
+
+/* Titres + paragraphes */
+p, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0; /* enlève les marges haut par défaut */
+    overflow-wrap: break-word; /* casse les mots trop longs */
+}
+
+/* Liens */
+a {
+    color: inherit; /* prend la couleur du parent */
+    text-decoration: none; /* enlève le soulignement */
+}
+
+/* Listes */
+ul, ol {
+    margin: 0; /* enlève marges par défaut */
+    padding: 0; /* enlève padding gauche */
+    list-style: none; /* enlève les puces / numéros */
+}
+
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 60% 40%; /* 2 colonnes */
+}
+
+
+/* =-=-=-=-=-=-=-=-=- */
+/* Section Music */
+/* =-=-=-=-=-=-=-=-=- */
+
+.music-section {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/image00001.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    /* display: grid;
+    place-items: center; */
+
+}
+
+/* Flou sur background image */
+.music-section::before {
+    content: "";
+    inset: 0; /* top:0 right:0 bottom:0 left:0 */
+    position: absolute;
+    backdrop-filter: blur(20px); /* flou du fond */
+    background: rgba(0, 0, 0, 0); /* assombrir en + */
+}
+
+
+
+.artwork-player {
+    aspect-ratio: 1 / 1;
+    border: 1px solid red;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.artwork-player img {
+    
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+
+    
+    
+}
+
+/* =-=-=-=-=-=-=-=-=- */
+/* Link Section */
+/* =-=-=-=-=-=-=-=-=- */
+
+.link-section {
+    width: 100%;
+    height: 100%;
+    background-color: #495159(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* text-align: center; */
+}
+
+.track-id {
+    display: flex;
+    flex-direction: column;
+    margin: 32px 0px 0px 32px;
+}
+
+.track-id h1 {
+    color: white;
+    font-size: 48px;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+
+
+}
+
+.track-id h2 {
+    color: white;
+    font-size: 20px;
+    font-size: 32px;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+BREAKPOINTS STANDARDS
+========================= */
+
+/* ≥ 640px : grands téléphones */
+@media (min-width: 640px) { /* applique styles si écran ≥ 640px */
+    
+}
+
+/* ≥ 768px : tablettes */
+@media (min-width: 768px) { /* breakpoint tablette classique */
+    
+}
+
+/* ≥ 1024px : laptop */
+@media (min-width: 1024px) { /* passage layout desktop */
+    
+}
+
+/* ≥ 1280px : desktop large */
+@media (min-width: 1280px) { /* écrans larges */
+    
+}
+
+/* ≥ 1536px : très grands écrans */
+@media (min-width: 1536px) { /* ultra wide */
+    
+}
+
+
