@@ -1,266 +1,207 @@
-/* =========================
-RESET / BASE
-Mobile first
-========================= */
-
-/* Sélectionne tous les éléments + pseudo éléments */
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* inclut padding + border dans width/height */
+    box-sizing: border-box;
 }
 
 html {
-    font-size: 100%; /* définit la taille de base du texte du site sur 100% = valeur par défaut du navigateur. Souvent 1rem (16px) */
-    -webkit-text-size-adjust: 100%; /* évite zoom automatique sur iOS */
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    margin: 0; /* enlève marge par défaut du navigateur */
-    min-height: 100vh; /* hauteur minimale = écran entier */
-    line-height: 1.5; /* espace vertical entre les lignes de texte */
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    background: #08040d;
+    color: #fff;
 }
 
-/* Cible tous les médias */
 img,
-picture,
-video,
-canvas,
 svg {
-    display: block; /* enlève les espaces inline (surtout images) */
-    max-width: 100%; /* empêche de dépasser du parent */
+    display: block;
+    max-width: 100%;
 }
 
-/* Inputs héritent de la typo du site */
-input,
-button,
-textarea,
-select {
-    font: inherit; /* récupère font-family, size, etc du parent */
-}
-
-/* Titres + paragraphes */
-p, h1, h2, h3, h4, h5, h6 {
-    margin-top: 0; /* enlève les marges haut par défaut */
-    overflow-wrap: break-word; /* casse les mots trop longs */
-}
-
-/* Liens */
 a {
-    color: inherit; /* prend la couleur du parent */
-    text-decoration: none; /* enlève le soulignement */
+    color: inherit;
+    text-decoration: none;
 }
 
-/* Listes */
-ul, ol {
-    margin: 0; /* enlève marges par défaut */
-    padding: 0; /* enlève padding gauche */
-    list-style: none; /* enlève les puces / numéros */
-}
-
-
-.wrapper {
-    height: 100vh;
-    width: 100vw;
+.fanlink {
+    min-height: 100vh;
     display: grid;
-    grid-template-columns: 62% 38%; /* 2 colonnes */
+    grid-template-columns: 62% 38%;
 }
 
+/* ARTWORK SECTION */
 
-/* =-=-=-=-=-=-=-=-=- */
-/* Section Music */
-/* =-=-=-=-=-=-=-=-=- */
-
-.music-section {
-    width: 100%;
-    height: 100%;
-    background-image: url(../img/image00001.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.fanlink__artwork {
     position: relative;
-    /* display: grid;
-    place-items: center; */
-    
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background-image: url("/assets/artworks/artwork-square-fade-away.png");
+    background-position: center;
+    background-size: cover;
 }
 
-/* Flou sur background image */
-.music-section::before {
+.fanlink__artwork::before {
     content: "";
-    inset: 0; /* top:0 right:0 bottom:0 left:0 */
     position: absolute;
-    backdrop-filter: blur(20px); /* flou du fond */
-    background: rgba(0, 0, 0, 0); /* assombrir en + */
+    inset: 0;
+    backdrop-filter: blur(22px);
+    background:
+    radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 38%),
+    rgba(4, 6, 16, 0.22);
+    transform: scale(1.04);
 }
 
-
-
-.artwork-player {
-    aspect-ratio: 1 / 1;
-    /* border: 1px solid red; */
-    width: 40%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+.artwork-card {
+    position: relative;
+    width: min(42vw, 520px);
+    aspect-ratio: 1;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
 }
 
-.artwork-player img {
-    
-    height: 100%;
+.artwork-card__image {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-/* =-=-=-=-=-=-=-=-=- */
-/* Link Section */
-/* =-=-=-=-=-=-=-=-=- */
 
-.link-section {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, #0b0b0b, #13041a);    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* text-align: center; */
-}
+/* LINKS SECTION */
 
-.track-id {
+
+.fanlink__content {
     display: flex;
     flex-direction: column;
-    margin: 32px 0px 0px 32px;
+    padding: clamp(32px, 4vw, 64px);
+    /* background:
+    linear-gradient(180deg, rgba(13, 12, 16, 0.98), rgba(20, 4, 28, 0.98)); */
+    background-color: #2d2035 ;
 }
 
-.song-title {
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    letter-spacing: 1px;
-    line-height: 1.1;
-    font-family: "Josefin Sans", sans-serif;
+.track {
+    margin-bottom: 56px;
+}
+
+
+.track__title,
+.track__artist {
+    margin: 0;
+    line-height: 1.15;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    font-weight: 400;
-    
-    
+    font-family: "Montserrat", sans-serif;
+
 }
 
-.artist-name {
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    letter-spacing: 1px;
-    line-height: 1.1;
-    font-family: "Josefin Sans", sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    /* text-transform: uppercase; */
+.track__title {
+    font-size: clamp(22px, 2vw, 30px);
+    font-weight: 600;
 }
 
+.track__artist {
+    margin-top: 10px;
+    font-size: clamp(20px, 1.7vw, 26px);
+    font-weight: 400;
+}
 
-.multilink {
+.platform-list {
     display: flex;
     flex-direction: column;
-    width: 600px;
-    gap: 20px;
-    margin: 10px 0px 10px 20px ;
-    padding: 30px 20px;
-    border-radius: 10px;
-    /* border: 1px solid #412a81; */
+    gap: 26px;
+    width: min(100%, 620px);
 }
 
-.icon-box {
-height: 60px;
-}
-
-.social-link {
+.platform-link {
+    /* min-height: 76px; */
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    gap: 24px;
+    padding: 0 0 0 8px;
 }
 
-.btn {
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    font-family: "Josefin Sans", sans-serif;
-    border: 2px solid white;
-    padding: 15px 50px;
+.platform-link__logo {
+    width: 130px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Tes SVG hériteront de cette taille si tu leur mets class="brand-logo" */
+.brand-logo {
+    width: auto;
+    height: 28px;
+}
+
+
+.platform-link__button {
+    min-width: 150px;
+    padding: 16px 34px;
+    border: 1px solid rgba(187, 187, 187, 0.88);
     border-radius: 10px;
-    font-weight: 600;
+    text-align: center;
+    font-weight: 700;
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+}
+
+/* .platform-link__button {
+    border-color: transparent;
+    background: linear-gradient(135deg, #31217a, #8a2a83);
+} */
+
+.platform-link:hover .platform-link__button {
+    transform: translateY(-2px);
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.platform-link--featured:hover .platform-link__button {
+    background: linear-gradient(135deg, #3b2b96, #9d3295);
+}
+
+@media (max-width: 900px) {
+    .fanlink {
+        grid-template-columns: 1fr;
+    }
     
-}
-
-.multilink__icon {
-    height: 26px;
-    fill: rgb(255, 255, 255);
-}
-
-
-button {
-    background: transparent;
-    color: #fff;
-    font-size: 17px;
-    text-transform: uppercase;
-    font-family: "Josefin Sans", sans-serif;
+    .fanlink__artwork {
+        min-height: 56vh;
+    }
     
-    font-weight: 600;
-    border: none;
-    padding: 20px 30px;
-    cursor: pointer;
-    perspective: 30rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.308);
-}
-
-button::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 10px;
-    background: linear-gradient(
-    320deg,
-    rgba(180, 43, 157, 0.678),
-    rgba(47, 55, 163, 0.308)
-    );
-    z-index: 1;
-    transition: background 3s;
-}
-
-
-
-
-
-
-
-
-/* =========================
-BREAKPOINTS STANDARDS
-========================= */
-
-/* ≥ 640px : grands téléphones */
-@media (min-width: 640px) { /* applique styles si écran ≥ 640px */
+    .artwork-card {
+        width: min(72vw, 420px);
+    }
     
+    .fanlink__content {
+        min-height: 44vh;
+    }
 }
 
-/* ≥ 768px : tablettes */
-@media (min-width: 768px) { /* breakpoint tablette classique */
+@media (max-width: 520px) {
+    .fanlink__content {
+        padding: 28px 20px;
+    }
     
-}
-
-/* ≥ 1024px : laptop */
-@media (min-width: 1024px) { /* passage layout desktop */
+    .platform-link {
+        min-height: 68px;
+        gap: 16px;
+    }
     
-}
-
-/* ≥ 1280px : desktop large */
-@media (min-width: 1280px) { /* écrans larges */
+    .platform-link__logo {
+        width: 160px;
+    }
     
+    .platform-link__button {
+        min-width: 104px;
+        padding: 13px 22px;
+    }
 }
-
-/* ≥ 1536px : très grands écrans */
-@media (min-width: 1536px) { /* ultra wide */
-    
-}
-
-
