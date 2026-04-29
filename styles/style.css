@@ -1,0 +1,246 @@
+/* =========================
+RESET / BASE
+========================= */
+
+*, *::before, *::after {
+    box-sizing: border-box; /* inclut padding + border dans width/height */
+}
+
+html {
+    font-size: 100%; /* définit la taille de base du texte du site sur 100% = valeur par défaut du navigateur. Souvent 1rem (16px) */
+    -webkit-text-size-adjust: 100%; /* évite zoom automatique sur iOS */
+}
+
+body {
+    margin: 0; /* enlève marge par défaut du navigateur */
+    min-height: 100vh; /* hauteur minimale = écran entier */
+    line-height: 1.5; /* espace vertical entre les lignes de texte */
+    font-family: "Montserrat", sans-serif;
+    /* font-family: "Inter", sans-serif; */
+
+
+}
+
+img, picture, video, canvas, svg {
+    display: block; /* enlève les espaces inline (surtout images) */
+    max-width: 100%; /* empêche de dépasser du parent */
+}
+
+input, button, textarea, select {
+    font: inherit; /* récupère font-family, size, etc du parent */
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0; /* enlève les marges haut par défaut */
+    overflow-wrap: break-word; /* casse les mots trop longs */
+}
+
+a {
+    color: inherit; /* prend la couleur du parent */
+    text-decoration: none; /* enlève le soulignement */
+}
+
+ul, ol {
+    margin: 0; /* enlève marges par défaut */
+    padding: 0; /* enlève padding gauche */
+    list-style: none; /* enlève les puces / numéros */
+}
+
+/* =========================
+STYLES PAR DÉFAUT = MOBILE
+(< 640px)
+========================= */
+
+.header {
+    background-image: url(../assets/background-images/image00001.png);
+    background-size: cover;
+    background-position: center 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.header > * {   
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+NavBar
+========================= */
+
+
+.navbar {
+    width: 100%;
+    padding: 32px 64px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    position: relative;
+}
+
+.navbar__logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    /* font-family: "Cinzel", serif; */
+    font-family: "Montserrat", sans-serif;
+    /* font-family: "Aboreto", system-ui; */
+
+
+    font-size: 50px;
+
+}
+
+.navbar__links {
+    list-style: none;
+    
+    display: flex;
+    gap: 40px;
+    
+    margin: 0;
+    padding: 0;
+
+}
+
+.navbar__links a {
+    color: white;
+    text-decoration: none;
+    
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    
+    opacity: 0.9;
+    transition: opacity 0.25s ease;
+}
+
+.navbar__links a:hover {
+    opacity: 1;
+}
+
+
+/* =========================
+Hero Content 
+========================= */
+
+
+.hero-content {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-60px);
+
+
+}
+
+.hero-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    font-weight: 350;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    margin-bottom: 24px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 28px;
+    height: 28px;
+
+    text-decoration: none;
+    opacity: 0.85;
+
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.social-links a svg,
+.social-links a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+BREAKPOINTS STANDARDS
+========================= */
+
+/* ≥ 640px : grands téléphones */
+@media (min-width: 640px) { /* applique styles si écran ≥ 640px */
+    
+}
+
+/* ≥ 768px : tablettes */
+@media (min-width: 768px) { /* breakpoint tablette classique */
+    
+}
+
+/* ≥ 1024px : laptop */
+@media (min-width: 1024px) { /* passage layout desktop */
+    
+}
+
+/* ≥ 1280px : desktop large */
+@media (min-width: 1280px) { /* écrans larges */
+    
+}
+
+/* ≥ 1536px : très grands écrans */
+@media (min-width: 1536px) { /* ultra wide */
+    
+}
+
+
