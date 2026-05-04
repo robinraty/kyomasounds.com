@@ -3,152 +3,275 @@ RESET / BASE
 ========================= */
 
 *, *::before, *::after {
-    box-sizing: border-box; /* inclut padding + border dans width/height */
+    box-sizing: border-box;
 }
 
 html {
-    font-size: 100%; /* définit la taille de base du texte du site sur 100% = valeur par défaut du navigateur. Souvent 1rem (16px) */
-    -webkit-text-size-adjust: 100%; /* évite zoom automatique sur iOS */
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    margin: 0; /* enlève marge par défaut du navigateur */
-    min-height: 100vh; /* hauteur minimale = écran entier */
-    line-height: 1.5; /* espace vertical entre les lignes de texte */
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.5;
     font-family: "Montserrat", sans-serif;
-    /* font-family: "Inter", sans-serif; */
-
-
 }
 
 img, picture, video, canvas, svg {
-    display: block; /* enlève les espaces inline (surtout images) */
-    max-width: 100%; /* empêche de dépasser du parent */
+    display: block;
+    max-width: 100%;
 }
 
 input, button, textarea, select {
-    font: inherit; /* récupère font-family, size, etc du parent */
+    font: inherit;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-    margin-top: 0; /* enlève les marges haut par défaut */
-    overflow-wrap: break-word; /* casse les mots trop longs */
+    margin-top: 0;
+    overflow-wrap: break-word;
 }
 
 a {
-    color: inherit; /* prend la couleur du parent */
-    text-decoration: none; /* enlève le soulignement */
+    color: inherit;
+    text-decoration: none;
 }
 
 ul, ol {
-    margin: 0; /* enlève marges par défaut */
-    padding: 0; /* enlève padding gauche */
-    list-style: none; /* enlève les puces / numéros */
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 /* =========================
-STYLES PAR DÉFAUT = MOBILE
-(< 640px)
+HEADER / HERO — MOBILE FIRST
 ========================= */
 
 .header {
+    min-height: 100vh;
+
     background-image: url(../assets/background-images/image00001.png);
     background-size: cover;
     background-position: center 100%;
     background-repeat: no-repeat;
-    height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+
+    position: relative;
+    overflow: hidden;
 }
 
 .header::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+
+    background:
+        radial-gradient(
+            circle at center 45%,
+            rgba(0, 0, 0, 0.15) 0%,
+            rgba(0, 0, 0, 0.07) 30%,
+            rgba(0, 0, 0, 0) 58%
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.38) 0%,
+            rgba(0, 0, 0, 0.14) 24%,
+            rgba(0, 0, 0, 0.06) 50%,
+            rgba(0, 0, 0, 0.30) 100%
+        );
 }
 
-.header > * {   
+.header > * {
     position: relative;
     z-index: 2;
 }
 
-/* =========================
-NavBar
-========================= */
+/* État quand le menu burger est ouvert */
 
+.header.menu-open .hero-title {
+    opacity: 0;
+}
+
+.header.menu-open .hero-content {
+    transform: none;
+}
+
+.header.menu-open .social-links {
+    position: fixed;
+    left: 50%;
+    bottom: 56px;
+    transform: translateX(-50%);
+    z-index: 30;
+}
+
+/* =========================
+NAVBAR — MOBILE
+========================= */
 
 .navbar {
     width: 100%;
-    padding: 32px 64px;
-    
+    padding: 32px 28px;
+
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    
+
     position: relative;
 }
 
+/* Logo */
+
 .navbar__logo {
-    font-family: "Cinzel", serif;
-    font-size: clamp(34px, 3.1vw, 52px);
+    font-family: "Aboreto", serif;
+    font-size: clamp(38px, 10.5vw, 52px);
     font-weight: 400;
-    letter-spacing: 0.20em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.92);
-  
+
+    color: rgba(255, 255, 255, 0.9);
+
     text-shadow:
-      0 0 8px rgba(255, 255, 255, 0.12),
-      0 0 22px rgba(190, 120, 255, 0.10);
-  
+        0 0 8px rgba(255, 255, 255, 0.10),
+        0 2px 14px rgba(0, 0, 0, 0.22);
+
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
-  }
 
-.navbar__logo:hover {
-    opacity: 1;
-    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    position: relative;
+    z-index: 30;
 }
 
-.navbar__links {
-    list-style: none;
-    
-    display: flex;
-    gap: 40px;
-    
-    margin: 0;
-    padding: 0;
+.navbar__logo:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
 
+/* Burger */
+
+.navbar__toggle {
+    position: absolute;
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    z-index: 30;
+}
+
+.navbar__toggle:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.navbar__toggle:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.45);
+    outline-offset: 5px;
+    border-radius: 8px;
+}
+
+.navbar__toggle span {
+    display: block;
+    width: 32px;
+    height: 2px;
+
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 999px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+
+    transition: transform 0.25s ease;
+}
+
+/* Burger ouvert = croix */
+
+.navbar__toggle--open span:first-child {
+    transform: translateY(5.5px) rotate(45deg);
+}
+
+.navbar__toggle--open span:last-child {
+    transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* Menu caché par défaut */
+
+.navbar__links {
+    display: none;
+}
+
+/* Menu ouvert — mobile fullscreen */
+
+.navbar__links--open {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+
+    padding: 160px 24px 240px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 8, 20, 0.94),
+            rgba(10, 12, 30, 0.82)
+        );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    z-index: 20;
 }
 
 .navbar__links a {
     color: white;
-    text-decoration: none;
-    
-    font-weight: 500;
-    font-size: 1.3rem;
-    letter-spacing: 0.16em;
+
+    font-weight: 400;
+    font-size: clamp(1.15rem, 4.2vw, 1.7rem);
+    letter-spacing: 0.20em;
     text-transform: uppercase;
-    
+
     opacity: 0.9;
-    transition: opacity 0.25s ease;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+
+    transition: opacity 0.25s ease, text-shadow 0.25s ease;
 }
 
 .navbar__links a:hover {
     opacity: 1;
-    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
 /* =========================
-Hero Content 
+HERO CONTENT — MOBILE
 ========================= */
 
-
 .hero-content {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,38 +279,44 @@ Hero Content
 
     text-align: center;
     color: white;
+
     margin-top: auto;
     margin-bottom: auto;
-    transform: translateY(-80px);
 
-
+    transform: translateY(-60px);
+    padding: 0 24px;
 }
 
 .hero-title {
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(1.5rem, 3vw, 3rem);
-    font-weight: 350;
+    font-size: clamp(2rem, 10vw, 3.4rem);
+    font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.16em;
+
+    text-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.25),
+        0 0 18px rgba(255, 255, 255, 0.08);
 
     margin-bottom: 18px;
+
 }
 
 .social-links {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 28px;
+    gap: 18px;
 }
 
 .social-links a {
+    width: 40px;
+    height: 40px;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 38px;
-    height: 38px;
-
-    text-decoration: none;
     opacity: 0.85;
 
     transition: opacity 0.25s ease, transform 0.25s ease;
@@ -198,55 +327,207 @@ Hero Content
     transform: translateY(-3px);
 }
 
-.social-links a svg,
-.social-links a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
+.social-links img {
+    display: block;
+
+    max-width: none;
+    max-height: none;
+
+    filter:
+        brightness(0) invert(1)
+        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
 }
 
+/* Icônes — mobile */
 
+.spotify-icon {
+    width: 28px;
+}
 
+.youtube-icon {
+    width: 31px;
+}
 
+.soundcloud-icon {
+    width: 38px;
+    transform: translateY(-1px);
+}
 
+.bandcamp-icon {
+    width: 34px;
+}
 
-
-
-
-
-
-
-
-
+.instagram-icon {
+    width: 29px;
+}
 
 /* =========================
-BREAKPOINTS STANDARDS
+≥ 640px : grands téléphones / petites tablettes
 ========================= */
 
-/* ≥ 640px : grands téléphones */
-@media (min-width: 640px) { /* applique styles si écran ≥ 640px */
-    
+@media (min-width: 640px) {
+    .hero-title {
+        font-size: clamp(2.4rem, 7vw, 4rem);
+    }
+
+    .social-links {
+        gap: 22px;
+    }
+
+    .social-links a {
+        width: 44px;
+        height: 44px;
+    }
+
+    .spotify-icon {
+        width: 30px;
+    }
+
+    .youtube-icon {
+        width: 33px;
+    }
+
+    .soundcloud-icon {
+        width: 41px;
+    }
+
+    .bandcamp-icon {
+        width: 36px;
+    }
+
+    .instagram-icon {
+        width: 31px;
+    }
 }
 
-/* ≥ 768px : tablettes */
-@media (min-width: 768px) { /* breakpoint tablette classique */
-    
+/* =========================
+≥ 1024px : DESKTOP
+========================= */
+
+@media (min-width: 1024px) {
+    .navbar {
+        padding: 32px 64px;
+        justify-content: space-between;
+    }
+
+    .navbar__logo {
+        font-size: clamp(36px, 3.2vw, 54px);
+        letter-spacing: 0.16em;
+    }
+
+    .navbar__toggle {
+        display: none;
+    }
+
+    /*
+    Important :
+    on cible aussi .navbar__links--open pour annuler le menu fullscreen
+    si la classe reste présente quand on repasse en desktop.
+    */
+
+    .navbar__links,
+    .navbar__links--open {
+        position: static;
+        inset: auto;
+        transform: none;
+
+        width: auto;
+        height: auto;
+        max-width: none;
+
+        padding: 0;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 40px;
+
+        background: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+
+        z-index: auto;
+    }
+
+    .navbar__links a {
+        font-size: 1.3rem;
+        letter-spacing: 0.16em;
+    }
+
+    .hero-content {
+        transform: translateY(-80px);
+        padding: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 3vw, 3rem);
+        letter-spacing: 0.18em;
+    }
+
+    /*
+    Sécurité desktop :
+    si menu-open reste sur le header, on remet le hero normal.
+    */
+
+    .header.menu-open .hero-title {
+        opacity: 1;
+    }
+
+    .header.menu-open .hero-content {
+        transform: translateY(-80px);
+    }
+
+    .header.menu-open .social-links {
+        position: static;
+        transform: none;
+        z-index: auto;
+    }
+
+    .social-links {
+        gap: 24px;
+    }
+
+    .social-links a {
+        width: 44px;
+        height: 44px;
+    }
+
+    .spotify-icon {
+        width: 30px;
+    }
+
+    .youtube-icon {
+        width: 33px;
+    }
+
+    .soundcloud-icon {
+        width: 41px;
+    }
+
+    .bandcamp-icon {
+        width: 36px;
+    }
+
+    .instagram-icon {
+        width: 31px;
+    }
 }
 
-/* ≥ 1024px : laptop */
-@media (min-width: 1024px) { /* passage layout desktop */
-    
+/* =========================
+≥ 1280px : desktop large
+========================= */
+
+@media (min-width: 1280px) {
 }
 
-/* ≥ 1280px : desktop large */
-@media (min-width: 1280px) { /* écrans larges */
-    
+/* =========================
+≥ 1536px : très grands écrans
+========================= */
+
+@media (min-width: 1536px) {
 }
-
-/* ≥ 1536px : très grands écrans */
-@media (min-width: 1536px) { /* ultra wide */
-    
-}
-
-
