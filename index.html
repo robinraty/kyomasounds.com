@@ -3,91 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css">
+
+    <!-- JavaScript -->
     <script src="scripts/main.js" defer></script>
 
     <title>Kyoma Sounds | Official Website</title>
-    
 </head>
+
 <body>
-    
+
+    <!-- =========================
+    HEADER / NAVBAR
+    ========================== -->
+
     <header class="header">
-        
-        <!-- Navbar -->
-        
-        <nav class="navbar">
-            <a href="index.html" class="navbar__logo">KYOMA</a>
-            
-            <!-- Menu Burger -->
-            
-            <button class="navbar__toggle" aria-label="Open menu">
-                <span></span>
-                <span></span>
-            </button>
-            
-            
-            <ul class="navbar__links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="music.html">Music</a></li>
-                <li><a href="playlists.html">Playlists</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="navbar__logo">KYOMA</a>
+
+                <!-- Menu Burger -->
+                <button class="navbar__toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <ul class="navbar__links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="playlists.html">Playlists</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- Social Icons | Mobile Menu -->
+                <div class="navbar__social-links">
+                    <a href="#" aria-label="Spotify">
+                        <img src="assets/icons/spotify.svg" alt="Spotify" class="spotify-icon">
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <img src="assets/icons/youtube.svg" alt="YouTube" class="youtube-icon">
+                    </a>
+
+                    <a href="#" aria-label="SoundCloud">
+                        <img src="assets/icons/soundcloud.svg" alt="SoundCloud" class="soundcloud-icon">
+                    </a>
+
+                    <a href="#" aria-label="Bandcamp">
+                        <img src="assets/icons/bandcamp.svg" alt="Bandcamp" class="bandcamp-icon">
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <img src="assets/icons/instagram.svg" alt="Instagram" class="instagram-icon">
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+
         <!-- Hero Content -->
-        
         <div class="hero-content">
             <h1 class="hero-title">Inner Peace</h1>
-            
+
+            <!-- Social Icons | Home Hero -->
             <div class="social-links">
                 <a href="#" aria-label="Spotify">
                     <img src="assets/icons/spotify.svg" alt="Spotify" class="spotify-icon">
                 </a>
-                
+
                 <a href="#" aria-label="YouTube">
-                    <!-- YouTube SVG -->
                     <img src="assets/icons/youtube.svg" alt="YouTube" class="youtube-icon">
-                    
                 </a>
-                
+
                 <a href="#" aria-label="SoundCloud">
-                    <!-- SoundCloud SVG -->
                     <img src="assets/icons/soundcloud.svg" alt="SoundCloud" class="soundcloud-icon">
-                    
                 </a>
-                
+
                 <a href="#" aria-label="Bandcamp">
-                    <!-- Bandcamp SVG -->
                     <img src="assets/icons/bandcamp.svg" alt="Bandcamp" class="bandcamp-icon">
-                    
                 </a>
-                
+
                 <a href="#" aria-label="Instagram">
-                    <!-- Instagram SVG -->
                     <img src="assets/icons/instagram.svg" alt="Instagram" class="instagram-icon">
-                    
                 </a>
             </div>
         </div>
-        
-        
-        
+
     </header>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 </body>
 </html>

@@ -3,156 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    
     <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css">
-
+    
     <!-- JavaScript -->
     <script src="scripts/main.js" defer></script>
-
+    
     <title>Music | Kyoma Sounds</title>
 </head>
 
 <body class="music-body">
-
+    
     <!-- =========================
     HEADER / NAVBAR
     ========================== -->
-
+    
     <header class="music-header">
+        <div class="container">
+            
+            <nav class="navbar">
+                <a href="index.html" class="navbar__logo">KYOMA</a>
+                
+                <!-- Menu Burger -->
+                <button class="navbar__toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <!-- Navigation Links -->
+                <ul class="navbar__links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="music.html" class="active">Music</a></li>
+                    <li><a href="playlists.html">Playlists</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
 
-        <nav class="navbar">
-            <a href="index.html" class="navbar__logo">KYOMA</a>
-
-            <!-- Menu Burger -->
-            <button class="navbar__toggle" aria-label="Open menu">
-                <span></span>
-                <span></span>
-            </button>
-
-            <ul class="navbar__links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="music.html" class="active">Music</a></li>
-                <li><a href="playlists.html">Playlists</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-
+                <!-- Social Icons | Mobile Menu -->
+                <div class="navbar__social-links">
+                    <a href="#" aria-label="Spotify">
+                        <img src="assets/icons/spotify.svg" alt="Spotify" class="spotify-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="YouTube">
+                        <img src="assets/icons/youtube.svg" alt="YouTube" class="youtube-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="SoundCloud">
+                        <img src="assets/icons/soundcloud.svg" alt="SoundCloud" class="soundcloud-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="Bandcamp">
+                        <img src="assets/icons/bandcamp.svg" alt="Bandcamp" class="bandcamp-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="Instagram">
+                        <img src="assets/icons/instagram.svg" alt="Instagram" class="instagram-icon">
+                    </a>
+                </div>
+            </nav>
+            
+        </div>
     </header>
-
-
+    
+    
     <!-- =========================
     MAIN CONTENT
     ========================== -->
-
+    
     <main class="music-page">
-
-        <section class="music-section">
-
-            <div class="section-heading">
-                <h1>Music</h1>
-                <p>Explore Kyoma's releases, soundscapes and quiet emotional worlds.</p>
-            </div>
-
-            <div class="music-grid">
-
-                <!-- Card 1 -->
-                <article class="music-card">
-                    <a href="#" class="music-card__image-link">
-                        <img src="assets/artworks/Kyoma - Where We Belong (Artwork).jpg" alt="Cover artwork for Release Title">
-                    </a>
-
-                    <div class="music-card__content">
-                        <h2>Where We Belong</h2>
-                        <p>Single · 2024</p>
-
-                        <a href="#" class="music-card__link">Listen now</a>
-                    </div>
-
+        <div class="container">
+            
+            <section class="music-section">
+                
+                <div class="section-heading">
+                    <h1>Music</h1>
+                    <p>Explore Kyoma's releases, soundscapes and quiet emotional worlds.</p>
+                </div>
+                
+                <div class="music-grid">
                     
-                </article>
+                    <article class="music-card">
+                        <a href="#" class="music-card__image-link">
+                            <img src="assets/artworks/Kyoma - Where We Belong (Artwork).jpg" alt="Cover artwork for Where We Belong">
+                        </a>
+                        
+                        <div class="music-card__content">
+                            <h2>Where We Belong</h2>
+                            <p>Single · 2024</p>
+                            <a href="#" class="music-card__link">Listen now</a>
+                        </div>
+                    </article>
+                    
+                    <article class="music-card">
+                        <a href="#" class="music-card__image-link">
+                            <img src="assets/artworks/Kyoma & Bleasy - Akemi (Artwork).jpeg" alt="Cover artwork for Akemi">
+                        </a>
+                        
+                        <div class="music-card__content">
+                            <h2>Akemi</h2>
+                            <p>Kyoma & Bleasy · 2024</p>
+                            <a href="#" class="music-card__link">Listen now</a>
+                        </div>
+                    </article>
+                    
+                    <article class="music-card">
+                        <a href="#" class="music-card__image-link">
+                            <img src="assets/artworks/Kyoma - Maiko (Artwork).jpeg" alt="Cover artwork for Maiko">
+                        </a>
+                        
+                        <div class="music-card__content">
+                            <h2>Maiko</h2>
+                            <p>Single · 2024</p>
+                            <a href="#" class="music-card__link">Listen now</a>
+                        </div>
+                    </article>
+                    
+                    <article class="music-card">
+                        <a href="#" class="music-card__image-link">
+                            <img src="assets/artworks/Kyoma & Sora - Heiko (Artwork).jpg" alt="Cover artwork for Heiko">
+                        </a>
+                        
+                        <div class="music-card__content">
+                            <h2>Heiko</h2>
+                            <p>Kyoma & Sora · 2024</p>
+                            <a href="#" class="music-card__link">Listen now</a>
+                        </div>
+                    </article>
+                    
+                    <article class="music-card">
+                        <a href="#" class="music-card__image-link">
+                            <img src="assets/artworks/Breathing_ART_3840x2160 copie.jpeg" alt="Cover artwork for Setsunai">
+                        </a>
+                        
+                        <div class="music-card__content">
+                            <h2>Setsunai</h2>
+                            <p>Single · 2023</p>
+                            <a href="#" class="music-card__link">Listen now</a>
+                        </div>
+                    </article>
+                    
+                    <article class="music-card">
+                        <a href="#" class="music-card__image-link">
+                            <img src="assets/artworks/Kyoma - Loving Choice (Artwork No Logo).jpeg" alt="Cover artwork for Loving Choice">
+                        </a>
+                        
+                        <div class="music-card__content">
+                            <h2>Loving Choice</h2>
+                            <p>Single · 2023</p>
+                            <a href="#" class="music-card__link">Listen now</a>
+                        </div>
+                    </article>
+                    
+                </div>
+                
+            </section>
 
-                <!-- Card 2 -->
-                <article class="music-card">
-                    <a href="#" class="music-card__image-link">
-                        <img src="assets/artworks/Kyoma & Bleasy - Akemi (Artwork).jpeg" alt="Cover artwork for Release Title">
-                    </a>
+<!-- =========================
+FOOTER
+========================== -->
 
-                    <div class="music-card__content">
-                        <h2>Akemi</h2>
-                        <p>Kyoma & Bleasy · 2024</p>
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__content">
 
-                        <a href="#" class="music-card__link">Listen now</a>
-                    </div>
-                </article>
+            <a href="index.html" class="site-footer__logo">KYOMA</a>
 
-                <!-- Card 3 -->
-                <article class="music-card">
-                    <a href="#" class="music-card__image-link">
-                        <img src="assets/artworks/Kyoma - Maiko (Artwork).jpeg" alt="Cover artwork for Release Title">
-                    </a>
+            <p class="site-footer__tagline">Relaxing sounds for quiet moments and inner peace.</p>
 
-                    <div class="music-card__content">
-                        <h2>Maiko</h2>
-                        <p>Single · 2024</p>
+            <!-- Social Icons | Footer -->
+            <div class="social-links site-footer__social-links">
+                <a href="#" aria-label="Spotify">
+                    <img src="assets/icons/spotify.svg" alt="Spotify" class="spotify-icon">
+                </a>
 
-                        <a href="#" class="music-card__link">Listen now</a>
-                    </div>
-                </article>
+                <a href="#" aria-label="YouTube">
+                    <img src="assets/icons/youtube.svg" alt="YouTube" class="youtube-icon">
+                </a>
 
-                <!-- Card 4 -->
-                <article class="music-card">
-                    <a href="#" class="music-card__image-link">
-                        <img src="assets/artworks/Kyoma & Sora - Heiko (Artwork).jpg" alt="Cover artwork for Release Title">
-                    </a>
+                <a href="#" aria-label="SoundCloud">
+                    <img src="assets/icons/soundcloud.svg" alt="SoundCloud" class="soundcloud-icon">
+                </a>
 
-                    <div class="music-card__content">
-                        <h2>Heiko</h2>
-                        <p>Kyoma & Sora · 2024</p>
+                <a href="#" aria-label="Bandcamp">
+                    <img src="assets/icons/bandcamp.svg" alt="Bandcamp" class="bandcamp-icon">
+                </a>
 
-                        <a href="#" class="music-card__link">Listen now</a>
-                    </div>
-                </article>
-
-                <!-- Card 5 -->
-                <article class="music-card">
-                    <a href="#" class="music-card__image-link">
-                        <img src="assets/artworks/Breathing_ART_3840x2160 copie.jpeg" alt="Cover artwork for Release Title">
-                    </a>
-
-                    <div class="music-card__content">
-                        <h2>Setsunai</h2>
-                        <p>Single · 2023</p>
-
-                        <a href="#" class="music-card__link">Listen now</a>
-                    </div>
-                </article>
-
-                <!-- Card 6 -->
-                <article class="music-card">
-                    <a href="#" class="music-card__image-link">
-                        <img src="assets/artworks/Kyoma - Loving Choice (Artwork No Logo).jpeg" alt="Cover artwork for Release Title">
-                    </a>
-
-                    <div class="music-card__content">
-                        <h2>Loving Choice</h2>
-                        <p>Single · 2023</p>
-
-                        <a href="#" class="music-card__link">Listen now</a>
-                    </div>
-                </article>
-
+                <a href="#" aria-label="Instagram">
+                    <img src="assets/icons/instagram.svg" alt="Instagram" class="instagram-icon">
+                </a>
             </div>
 
-        </section>
+            <p class="site-footer__copyright">
+                © 2026 Kyoma Sounds. All rights reserved.
+            </p>
 
+        </div>
+    </div>
+</footer>
+            
+        </div>
     </main>
-
+    
 </body>
 </html>

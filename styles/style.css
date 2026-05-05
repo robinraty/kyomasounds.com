@@ -28,7 +28,7 @@ input, button, textarea, select {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
+    margin: 0;
     overflow-wrap: break-word;
 }
 
@@ -43,14 +43,20 @@ ul, ol {
     list-style: none;
 }
 
+
+/* =========================
+GLOBAL LAYOUT
+========================= */
+
+.container {
+    width: min(100% - 128px, 1500px);
+    margin-inline: auto;
+}
+
+
 /* =========================
 HOME PAGE
 Header hero, Inner Peace...
-========================= */
-
-
-/* =========================
-HEADER / HERO 
 ========================= */
 
 .header {
@@ -95,31 +101,14 @@ HEADER / HERO
     z-index: 2;
 }
 
-/* État quand le menu burger est ouvert */
-
-.header.menu-open .hero-title {
-    opacity: 0;
-}
-
-.header.menu-open .hero-content {
-    transform: none;
-}
-
-.header.menu-open .social-links {
-    position: fixed;
-    left: 50%;
-    bottom: 56px;
-    transform: translateX(-50%);
-    z-index: 30;
-}
 
 /* =========================
-NAVBAR — MOBILE
+NAVBAR — MOBILE FIRST
 ========================= */
 
 .navbar {
     width: 100%;
-    padding: 32px 28px;
+    padding: 32px 0;
 
     display: flex;
     justify-content: center;
@@ -159,7 +148,7 @@ NAVBAR — MOBILE
 
 .navbar__toggle {
     position: absolute;
-    right: 28px;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
 
@@ -268,13 +257,68 @@ NAVBAR — MOBILE
     transition: opacity 0.25s ease, text-shadow 0.25s ease;
 }
 
-.navbar__links a:hover {
+.navbar__links a:hover,
+.navbar__links a.active {
     opacity: 1;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
 }
 
+
 /* =========================
-HERO CONTENT — MOBILE
+NAVBAR SOCIAL LINKS
+Icônes utilisées dans le menu mobile
+========================= */
+
+.navbar__social-links {
+    display: none;
+}
+
+.navbar.menu-open .navbar__social-links {
+    position: fixed;
+    left: 50%;
+    bottom: 56px;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+
+    z-index: 30;
+}
+
+.navbar__social-links a {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0.85;
+
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.navbar__social-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.navbar__social-links img {
+    display: block;
+
+    max-width: none;
+    max-height: none;
+
+    filter:
+        brightness(0) invert(1)
+        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+}
+
+
+/* =========================
+HERO CONTENT — HOME
 ========================= */
 
 .hero-content {
@@ -305,8 +349,22 @@ HERO CONTENT — MOBILE
         0 0 18px rgba(255, 255, 255, 0.08);
 
     margin-bottom: 18px;
-
 }
+
+/* Menu ouvert sur Home :
+on cache Inner Peace + les icônes du hero.
+Les icônes visibles sont celles de .navbar__social-links.
+*/
+
+.header.menu-open .hero-title {
+    opacity: 0;
+}
+
+.header.menu-open .hero-content .social-links {
+    display: none;
+}
+
+/* Icônes sociales du hero Home */
 
 .social-links {
     display: flex;
@@ -344,7 +402,11 @@ HERO CONTENT — MOBILE
         drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
 }
 
-/* Icônes — mobile */
+
+/* =========================
+ICÔNES — TAILLES
+Réutilisées par hero + navbar menu
+========================= */
 
 .spotify-icon {
     width: 28px;
@@ -368,22 +430,79 @@ HERO CONTENT — MOBILE
 }
 
 
+/* =========================
+FOOTER
+========================= */
 
+.site-footer {
+    color: white;
+    padding: 72px 0 24px;
 
+    position: relative;
+    z-index: 1;
+}
 
+.site-footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
 
+    text-align: center;
+}
 
+.site-footer__logo {
+    font-family: "Aboreto", serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
 
+    color: rgba(255, 255, 255, 0.9);
 
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.10),
+        0 2px 14px rgba(0, 0, 0, 0.22);
 
+    transition:
+        opacity 0.25s ease,
+        text-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.site-footer__logo:hover {
+    opacity: 1;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.35),
+        0 2px 16px rgba(0, 0, 0, 0.28);
+
+    transform: translateY(-2px);
+}
+
+.site-footer__tagline {
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.site-footer__social-links {
+    margin-top: 6px;
+}
+
+.site-footer__copyright {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+
+    color: rgba(255, 255, 255, 0.45);
+}
 
 
 /* =========================
 MUSIC PAGE
 Grid releases, cards...
 ========================= */
-
-/* Body spécifique à la page Music */
 
 .music-body {
     min-height: 100vh;
@@ -412,7 +531,6 @@ Grid releases, cards...
     z-index: -2;
 }
 
-
 /* Overlay sombre par-dessus l'image */
 
 .music-body::after {
@@ -430,6 +548,7 @@ Grid releases, cards...
     z-index: -1;
 }
 
+
 /* =========================
 PAGE HEADER — PAGES INTERNES
 ========================= */
@@ -442,44 +561,42 @@ PAGE HEADER — PAGES INTERNES
     z-index: 10;
 }
 
-/* Lien actif dans la navbar */
-
-.navbar__links a.active {
-    opacity: 1;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
-}
 
 /* =========================
-MUSIC PAGE
+MUSIC PAGE CONTENT
 ========================= */
 
 .music-page {
     min-height: 100vh;
     color: white;
-    padding: 40px 24px 96px;
+
+    padding: 32px 0 64px;
 
     position: relative;
     z-index: 1;
 }
 
 .music-section {
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
 }
 
 /* Heading */
 
 .section-heading {
     max-width: 760px;
-    margin-bottom: 56px;
+    margin-bottom: 44px;
 }
 
 .section-heading h1 {
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(2.4rem, 8vw, 5rem);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+
     font-weight: 300;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
+
+    transform: translateX(-0.04em);
 
     margin-bottom: 16px;
 
@@ -491,17 +608,17 @@ MUSIC PAGE
 .section-heading p {
     max-width: 560px;
 
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.8;
 
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 255, 255, 0.68);
 }
 
 /* Music Grid */
 
 .music-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+    grid-template-columns: 1fr;
     gap: 40px;
 }
 
@@ -519,15 +636,17 @@ MUSIC PAGE
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        background 0.28s ease,
+        box-shadow 0.28s ease;
 }
 
 .music-card:hover {
     transform: translateY(-6px);
     background: rgba(255, 255, 255, 0.065);
     border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
 }
 
 .music-card__image-link {
@@ -587,22 +706,11 @@ MUSIC PAGE
 }
 
 
-
-
-
-
-
-
-
-
 /* =========================
-RESPONSIVE 
+RESPONSIVE
 ========================= */
 
-
-/* =========================
-≥ 640px : grands téléphones / petites tablettes
-========================= */
+/* ≥ 640px : grands téléphones / petites tablettes */
 
 @media (min-width: 640px) {
     .hero-title {
@@ -639,13 +747,19 @@ RESPONSIVE
     }
 }
 
-/* ===========================================
-≥ 1024px : DESKTOP
-============================================== */
+/* ≥ 768px : tablettes */
+
+@media (min-width: 768px) {
+    .music-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ≥ 1024px : desktop */
 
 @media (min-width: 1024px) {
     .navbar {
-        padding: 32px 64px;
+        padding: 32px 0;
         justify-content: space-between;
     }
 
@@ -657,20 +771,6 @@ RESPONSIVE
     .navbar__toggle {
         display: none;
     }
-
-    .music-page {
-        padding: 56px 64px 120px;
-    }
-
-    .section-heading {
-        margin-bottom: 72px;
-    }
-
-    /*
-    Important :
-    on cible aussi .navbar__links--open pour annuler le menu fullscreen
-    si la classe reste présente quand on repasse en desktop.
-    */
 
     .navbar__links,
     .navbar__links--open {
@@ -706,6 +806,11 @@ RESPONSIVE
         letter-spacing: 0.16em;
     }
 
+    .navbar__social-links,
+    .navbar.menu-open .navbar__social-links {
+        display: none;
+    }
+
     .hero-content {
         transform: translateY(-80px);
         padding: 0;
@@ -716,23 +821,24 @@ RESPONSIVE
         letter-spacing: 0.18em;
     }
 
-    /*
-    Sécurité desktop :
-    si menu-open reste sur le header, on remet le hero normal.
-    */
-
     .header.menu-open .hero-title {
         opacity: 1;
     }
 
-    .header.menu-open .hero-content {
-        transform: translateY(-80px);
+    .header.menu-open .hero-content .social-links {
+        display: flex;
     }
 
-    .header.menu-open .social-links {
-        position: static;
-        transform: none;
-        z-index: auto;
+    .music-page {
+        padding: 32px 0 64px;
+    }
+
+    .section-heading {
+        margin-bottom: 56px;
+    }
+
+    .music-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .social-links {
@@ -765,14 +871,12 @@ RESPONSIVE
     }
 }
 
-/* =========================
-≥ 1280px : desktop large
-========================= */
+/* ≥ 1280px : desktop large */
 
 @media (min-width: 1280px) {
 }
 
-/* =========================
-≥ 1536px : très grands écrans
-========================= */
+/* ≥ 1536px : très grands écrans */
 
+@media (min-width: 1536px) {
+}
