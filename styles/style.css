@@ -606,7 +606,6 @@ MUSIC PAGE CONTENT
 }
 
 .section-heading p {
-    max-width: 560px;
 
     font-size: 1rem;
     line-height: 1.8;
@@ -707,6 +706,44 @@ MUSIC PAGE CONTENT
 
 
 /* =========================
+PLAYLISTS PAGE
+========================= */
+
+.playlist-section {
+    max-width: none;
+    margin: 0;
+}
+
+.playlist-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    max-width: 1800px;
+    margin-inline: auto;
+}
+
+.playlist-card {
+    text-align: center;
+}
+
+.playlist-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlist-card__content h2 {
+    max-width: 320px;
+}
+
+.playlist-card__content p {
+    max-width: 360px;
+    line-height: 1.7;
+}
+
+
+/* =========================
 RESPONSIVE
 ========================= */
 
@@ -753,7 +790,14 @@ RESPONSIVE
     .music-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+
+
+    .playlist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
 
 /* ≥ 1024px : desktop */
 
@@ -841,6 +885,9 @@ RESPONSIVE
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .playlist-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
     .social-links {
         gap: 24px;
     }
