@@ -61,16 +61,16 @@ Header hero, Inner Peace...
 
 .header {
     min-height: 100vh;
-
+    
     background-image: url(../assets/background-images/image00001.png);
     background-size: cover;
     background-position: center 100%;
     background-repeat: no-repeat;
-
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     position: relative;
     overflow: hidden;
 }
@@ -79,21 +79,21 @@ Header hero, Inner Peace...
     content: "";
     position: absolute;
     inset: 0;
-
+    
     background:
-        radial-gradient(
-            circle at center 45%,
-            rgba(0, 0, 0, 0.15) 0%,
-            rgba(0, 0, 0, 0.07) 30%,
-            rgba(0, 0, 0, 0) 58%
-        ),
-        linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.38) 0%,
-            rgba(0, 0, 0, 0.14) 24%,
-            rgba(0, 0, 0, 0.06) 50%,
-            rgba(0, 0, 0, 0.30) 100%
-        );
+    radial-gradient(
+    circle at center 45%,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.07) 30%,
+    rgba(0, 0, 0, 0) 58%
+    ),
+    linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.38) 0%,
+    rgba(0, 0, 0, 0.14) 24%,
+    rgba(0, 0, 0, 0.06) 50%,
+    rgba(0, 0, 0, 0.30) 100%
+    );
 }
 
 .header > * {
@@ -109,11 +109,11 @@ NAVBAR — MOBILE FIRST
 .navbar {
     width: 100%;
     padding: 32px 0;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     position: relative;
 }
 
@@ -125,17 +125,17 @@ NAVBAR — MOBILE FIRST
     font-weight: 400;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-
+    
     color: rgba(255, 255, 255, 0.9);
-
+    
     text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.10),
-        0 2px 14px rgba(0, 0, 0, 0.22);
-
+    0 0 8px rgba(255, 255, 255, 0.10),
+    0 2px 14px rgba(0, 0, 0, 0.22);
+    
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
-
+    
     position: relative;
     z-index: 30;
 }
@@ -151,21 +151,21 @@ NAVBAR — MOBILE FIRST
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-
+    
     width: 44px;
     height: 44px;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 9px;
-
+    
     background: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
-
+    
     z-index: 30;
 }
 
@@ -183,12 +183,12 @@ NAVBAR — MOBILE FIRST
     display: block;
     width: 32px;
     height: 2px;
-
+    
     background: rgba(255, 255, 255, 0.92);
     border-radius: 999px;
-
+    
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
-
+    
     transition: transform 0.25s ease;
 }
 
@@ -213,47 +213,47 @@ NAVBAR — MOBILE FIRST
 .navbar__links--open {
     position: fixed;
     inset: 0;
-
+    
     width: 100vw;
     height: 100vh;
     height: 100dvh;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 36px;
-
+    
     padding: 160px 24px 240px;
-
+    
     background:
-        linear-gradient(
-            to bottom,
-            rgba(5, 8, 20, 0.94),
-            rgba(10, 12, 30, 0.82)
-        );
-
+    linear-gradient(
+    to bottom,
+    rgba(5, 8, 20, 0.94),
+    rgba(10, 12, 30, 0.82)
+    );
+    
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
+    
     border: none;
     border-radius: 0;
     box-shadow: none;
-
+    
     z-index: 20;
 }
 
 .navbar__links a {
     color: white;
-
+    
     font-weight: 400;
     font-size: clamp(1.15rem, 4.2vw, 1.7rem);
     letter-spacing: 0.20em;
     text-transform: uppercase;
-
+    
     opacity: 0.9;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
-
+    
     transition: opacity 0.25s ease, text-shadow 0.25s ease;
 }
 
@@ -278,25 +278,25 @@ Icônes utilisées dans le menu mobile
     left: 50%;
     bottom: 56px;
     transform: translateX(-50%);
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 22px;
-
+    
     z-index: 30;
 }
 
 .navbar__social-links a {
     width: 44px;
     height: 44px;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     opacity: 0.85;
-
+    
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -307,13 +307,13 @@ Icônes utilisées dans le menu mobile
 
 .navbar__social-links img {
     display: block;
-
+    
     max-width: none;
     max-height: none;
-
+    
     filter:
-        brightness(0) invert(1)
-        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+    brightness(0) invert(1)
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
 }
 
 
@@ -326,13 +326,13 @@ HERO CONTENT — HOME
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     text-align: center;
     color: white;
-
+    
     margin-top: auto;
     margin-bottom: auto;
-
+    
     transform: translateY(-60px);
     padding: 0 24px;
 }
@@ -343,11 +343,11 @@ HERO CONTENT — HOME
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-
+    
     text-shadow:
-        0 2px 12px rgba(0, 0, 0, 0.25),
-        0 0 18px rgba(255, 255, 255, 0.08);
-
+    0 2px 12px rgba(0, 0, 0, 0.25),
+    0 0 18px rgba(255, 255, 255, 0.08);
+    
     margin-bottom: 18px;
 }
 
@@ -376,13 +376,13 @@ Les icônes visibles sont celles de .navbar__social-links.
 .social-links a {
     width: 40px;
     height: 40px;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     opacity: 0.85;
-
+    
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -393,13 +393,13 @@ Les icônes visibles sont celles de .navbar__social-links.
 
 .social-links img {
     display: block;
-
+    
     max-width: none;
     max-height: none;
-
+    
     filter:
-        brightness(0) invert(1)
-        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+    brightness(0) invert(1)
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
 }
 
 
@@ -436,8 +436,8 @@ FOOTER
 
 .site-footer {
     color: white;
-    padding: 72px 0 24px;
-
+    padding: 72px 0 72px;
+    
     position: relative;
     z-index: 1;
 }
@@ -447,7 +447,7 @@ FOOTER
     flex-direction: column;
     align-items: center;
     gap: 22px;
-
+    
     text-align: center;
 }
 
@@ -457,25 +457,25 @@ FOOTER
     font-weight: 400;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-
+    
     color: rgba(255, 255, 255, 0.9);
-
+    
     text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.10),
-        0 2px 14px rgba(0, 0, 0, 0.22);
-
+    0 0 8px rgba(255, 255, 255, 0.10),
+    0 2px 14px rgba(0, 0, 0, 0.22);
+    
     transition:
-        opacity 0.25s ease,
-        text-shadow 0.25s ease,
-        transform 0.25s ease;
+    opacity 0.25s ease,
+    text-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .site-footer__logo:hover {
     opacity: 1;
     text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.35),
-        0 2px 16px rgba(0, 0, 0, 0.28);
-
+    0 0 10px rgba(255, 255, 255, 0.35),
+    0 2px 16px rgba(0, 0, 0, 0.28);
+    
     transform: translateY(-2px);
 }
 
@@ -483,7 +483,7 @@ FOOTER
     font-size: 0.95rem;
     font-weight: 300;
     letter-spacing: 0.08em;
-
+    
     color: rgba(255, 255, 255, 0.65);
 }
 
@@ -494,7 +494,7 @@ FOOTER
 .site-footer__copyright {
     font-size: 0.78rem;
     letter-spacing: 0.08em;
-
+    
     color: rgba(255, 255, 255, 0.45);
 }
 
@@ -507,7 +507,7 @@ Grid releases, cards...
 .music-body {
     min-height: 100vh;
     color: white;
-
+    
     position: relative;
     background: #050814;
 }
@@ -518,16 +518,16 @@ Grid releases, cards...
     content: "";
     position: fixed;
     inset: 0;
-
+    
     background-image: url(../assets/background-images/image00001.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    
     filter: blur(16px);
     transform: scale(1.08);
     opacity: 0.62;
-
+    
     z-index: -2;
 }
 
@@ -537,14 +537,14 @@ Grid releases, cards...
     content: "";
     position: fixed;
     inset: 0;
-
+    
     background:
-        linear-gradient(
-            to bottom,
-            rgba(5, 8, 20, 0.97),
-            rgba(8, 10, 24, 0.92)
-        );
-
+    linear-gradient(
+    to bottom,
+    rgba(5, 8, 20, 0.97),
+    rgba(8, 10, 24, 0.92)
+    );
+    
     z-index: -1;
 }
 
@@ -556,7 +556,7 @@ PAGE HEADER — PAGES INTERNES
 .music-header {
     background: transparent;
     color: white;
-
+    
     position: relative;
     z-index: 10;
 }
@@ -567,11 +567,10 @@ MUSIC PAGE CONTENT
 ========================= */
 
 .music-page {
-    min-height: 100vh;
     color: white;
-
-    padding: 32px 0 64px;
-
+    
+    padding: 32px 0 0px;
+    
     position: relative;
     z-index: 1;
 }
@@ -591,25 +590,25 @@ MUSIC PAGE CONTENT
 .section-heading h1 {
     font-family: "Montserrat", sans-serif;
     font-size: clamp(2.2rem, 6vw, 4rem);
-
+    
     font-weight: 300;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-
+    
     transform: translateX(-0.04em);
-
+    
     margin-bottom: 16px;
-
+    
     text-shadow:
-        0 2px 14px rgba(0, 0, 0, 0.35),
-        0 0 22px rgba(255, 255, 255, 0.08);
+    0 2px 14px rgba(0, 0, 0, 0.35),
+    0 0 22px rgba(255, 255, 255, 0.08);
 }
 
 .section-heading p {
-
+    
     font-size: 1rem;
     line-height: 1.8;
-
+    
     color: rgba(255, 255, 255, 0.68);
 }
 
@@ -628,17 +627,17 @@ MUSIC PAGE CONTENT
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 24px;
     overflow: hidden;
-
+    
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
+    
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
-
+    
     transition:
-        transform 0.28s ease,
-        border-color 0.28s ease,
-        background 0.28s ease,
-        box-shadow 0.28s ease;
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .music-card:hover {
@@ -658,7 +657,7 @@ MUSIC PAGE CONTENT
     width: 100%;
     height: 100%;
     object-fit: cover;
-
+    
     transition: transform 0.35s ease;
 }
 
@@ -674,27 +673,27 @@ MUSIC PAGE CONTENT
     font-size: 1.25rem;
     font-weight: 500;
     letter-spacing: 0.04em;
-
+    
     margin-bottom: 6px;
 }
 
 .music-card__content p {
     color: rgba(255, 255, 255, 0.62);
     font-size: 0.95rem;
-
+    
     margin-bottom: 22px;
 }
 
 .music-card__link {
     display: inline-block;
-
+    
     font-size: 0.78rem;
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-
+    
     color: rgba(255, 255, 255, 0.9);
-
+    
     opacity: 0.85;
     transition: opacity 0.25s ease, text-shadow 0.25s ease;
 }
@@ -718,7 +717,7 @@ PLAYLISTS PAGE
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
-
+    
     max-width: 1800px;
     margin-inline: auto;
 }
@@ -742,6 +741,675 @@ PLAYLISTS PAGE
     line-height: 1.7;
 }
 
+/* =========================
+ABOUT PAGE
+========================= */
+
+.about-body {
+    min-height: 100vh;
+    color: white;
+    
+    position: relative;
+    background: #050814;
+}
+
+/* Même background que Music / Playlists */
+
+.about-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    
+    background-image: url(../assets/background-images/image00001.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    filter: blur(16px);
+    transform: scale(1.08);
+    opacity: 0.62;
+    
+    z-index: -2;
+}
+
+.about-body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    
+    background:
+    linear-gradient(
+    to bottom,
+    rgba(5, 8, 20, 0.97),
+    rgba(8, 10, 24, 0.92)
+    );
+    
+    z-index: -1;
+}
+
+/* Page */
+
+.about-page {
+    color: white;
+    padding: 32px 0 0;
+    position: relative;
+    z-index: 1;
+}
+
+.about-section {
+    max-width: none;
+    margin: 0;
+}
+
+/* Story cards */
+
+.about-story {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    
+    margin-bottom: 40px;
+    padding: 28px;
+    
+    background: rgba(10, 12, 30, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.about-story:last-child {
+    margin-bottom: 0;
+}
+
+.about-story__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-story__label {
+    display: inline-block;
+    
+    margin-bottom: 16px;
+    
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.52);
+}
+
+.about-story__text h2 {
+    max-width: 700px;
+    
+    margin-bottom: 22px;
+    
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1.65rem, 4vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.92);
+    
+    text-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.35),
+    0 0 22px rgba(255, 255, 255, 0.06);
+}
+
+.about-story__text p {
+    max-width: 720px;
+    
+    margin-bottom: 18px;
+    
+    font-size: 1rem;
+    line-height: 1.85;
+    
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.about-story__text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-story__image {
+    overflow: hidden;
+    
+    border-radius: 20px;
+    aspect-ratio: 4 / 5;
+    
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.about-story__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    filter: brightness(0.88) saturate(0.85) contrast(1.05);
+    
+    transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.about-story:hover .about-story__image img {
+    transform: scale(1.04);
+}
+
+/* =========================
+CONTACT PAGE
+========================= */
+
+.contact-body {
+    min-height: 100vh;
+    color: white;
+    
+    position: relative;
+    background: #050814;
+}
+
+/* Même background que Music / Playlists / About */
+
+.contact-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    
+    background-image: url(../assets/background-images/image00001.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    filter: blur(16px);
+    transform: scale(1.08);
+    opacity: 0.62;
+    
+    z-index: -2;
+}
+
+.contact-body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    
+    background:
+    linear-gradient(
+    to bottom,
+    rgba(5, 8, 20, 0.97),
+    rgba(8, 10, 24, 0.92)
+    );
+    
+    z-index: -1;
+}
+
+.contact-page {
+    color: white;
+    padding: 32px 0 0;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section {
+    max-width: none;
+    margin: 0;
+}
+
+.contact-card {
+    min-height: 520px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+    
+    padding: 64px 32px;
+    
+    background: rgba(10, 12, 30, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.contact-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    background-image:
+    linear-gradient(
+    rgba(8, 10, 24, 0.72),
+    rgba(8, 10, 24, 0.82)
+    ),
+    url("../assets/background-images/image00001.png");
+    
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    
+    filter: blur(2px);
+    transform: scale(1.04);
+    
+    z-index: -1;
+}
+
+.contact-card__content {
+    max-width: 760px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    
+}
+
+.contact-card__label {
+    display: inline-block;
+    
+    margin-bottom: 22px;
+    
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.52);
+}
+
+.contact-card__content h2 {
+    margin-bottom: 28px;
+    
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.94);
+    
+    text-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.35),
+    0 0 22px rgba(255, 255, 255, 0.08);
+}
+
+.contact-card__content p {
+    max-width: 680px;
+    
+    margin: 0 auto 34px;
+    
+    font-size: 1rem;
+    line-height: 1.9;
+    
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.contact-card__email {
+    display: inline-block;
+    
+    margin-bottom: 34px;
+    
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    
+    color: rgba(255, 255, 255, 0.9);
+    
+    transition:
+    opacity 0.25s ease,
+    text-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-card__email:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.contact-card__social-links {
+    gap: 26px;
+}
+
+.contact-card__social-links a {
+    width: 46px;
+    height: 46px;
+}
+
+/* =========================
+CONTACT RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+    .contact-card {
+        min-height: auto;
+        padding: 48px 24px;
+    }
+    
+    .contact-card__content h2 {
+        letter-spacing: 0.08em;
+    }
+    
+    .contact-card__content p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    
+    .contact-card__social-links {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+}
+
+
+/* =========================
+CONTACT PAGE
+========================= */
+
+.contact-body {
+    min-height: 100vh;
+    color: white;
+    position: relative;
+    background: #050814;
+    overflow: hidden;
+}
+
+.contact-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    
+    background-image: url(../assets/background-images/image00001.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    filter: blur(16px);
+    transform: scale(1.08);
+    opacity: 0.62;
+    
+    z-index: -2;
+}
+
+.contact-body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    
+    background:
+    linear-gradient(
+    to bottom,
+    rgba(5, 8, 20, 0.97),
+    rgba(8, 10, 24, 0.92)
+    );
+    
+    z-index: -1;
+}
+
+.contact-page {
+    color: white;
+    padding: 32px 0 0;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.contact-section .section-heading {
+    margin-bottom: 40px;
+}
+
+.contact-card {
+    min-height: 470px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    overflow: hidden;
+    
+    padding: 52px 32px;
+    
+    background: rgba(10, 12, 30, 0.62);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 24px;
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.22),
+    0 0 44px rgba(120, 150, 255, 0.045);
+}
+
+.contact-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    background-image:
+    linear-gradient(
+    rgba(8, 10, 24, 0.72),
+    rgba(8, 10, 24, 0.82)
+    ),
+    url("../assets/background-images/image00001.png");
+    
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    
+    filter: blur(2px);
+    transform: scale(1.04);
+    
+    z-index: -1;
+    
+    transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+
+.contact-card:hover::before {
+    opacity: 0.5;
+    transform: scale(1.06);
+    filter: blur(1px);
+}
+
+.contact-card__content {
+    max-width: 760px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-card__label {
+    display: inline-block;
+    margin-bottom: 18px;
+    
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.52);
+}
+
+.contact-card__content h2 {
+    margin-bottom: 24px;
+    
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.94);
+    
+    text-shadow:
+    0 2px 14px rgba(0, 0, 0, 0.35),
+    0 0 22px rgba(255, 255, 255, 0.08);
+}
+
+.contact-card__content p {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    
+    font-size: 1rem;
+    line-height: 1.8;
+    
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.contact-card__email {
+    display: inline-block;
+    margin-bottom: 28px;
+    
+    font-size: clamp(1rem, 3vw, 1.35rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    
+    color: rgba(255, 255, 255, 0.9);
+    
+    transition:
+    opacity 0.25s ease,
+    text-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-card__email:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.contact-card__social-links {
+    gap: 26px;
+}
+
+.contact-card__social-links a {
+    width: 46px;
+    height: 46px;
+}
+
+/* =========================
+SCROLL REVEAL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(34px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.reveal--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+CONTACT RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+    .contact-body {
+        overflow: auto;
+    }
+    
+    .contact-page {
+        padding: 32px 0 0;
+    }
+    
+    .contact-card {
+        min-height: auto;
+        padding: 44px 24px;
+    }
+    
+    .contact-card__content h2 {
+        letter-spacing: 0.08em;
+    }
+    
+    .contact-card__content p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    
+    .contact-card__social-links {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+}
+
+
+
+/* =========================
+ABOUT RESPONSIVE
+========================= */
+
+@media (min-width: 900px) {
+    .about-story {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        
+        padding: 40px;
+        margin-bottom: 56px;
+    }
+    
+    .about-story--reverse {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+    
+    .about-story__image {
+        aspect-ratio: 1 / 1.08;
+    }
+}
+
+@media (min-width: 1280px) {
+    .about-story {
+        gap: 72px;
+        padding: 48px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-story {
+        padding: 22px;
+        border-radius: 22px;
+    }
+    
+    .about-story__text h2 {
+        font-size: 1.55rem;
+        letter-spacing: 0.07em;
+    }
+    
+    .about-story__text p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    
+    .about-story__image {
+        border-radius: 18px;
+        aspect-ratio: 1 / 1;
+    }
+}
 
 /* =========================
 RESPONSIVE
@@ -753,32 +1421,32 @@ RESPONSIVE
     .hero-title {
         font-size: clamp(2.4rem, 7vw, 4rem);
     }
-
+    
     .social-links {
         gap: 22px;
     }
-
+    
     .social-links a {
         width: 44px;
         height: 44px;
     }
-
+    
     .spotify-icon {
         width: 30px;
     }
-
+    
     .youtube-icon {
         width: 33px;
     }
-
+    
     .soundcloud-icon {
         width: 41px;
     }
-
+    
     .bandcamp-icon {
         width: 36px;
     }
-
+    
     .instagram-icon {
         width: 31px;
     }
@@ -790,9 +1458,9 @@ RESPONSIVE
     .music-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-
-
+    
+    
+    
     .playlist-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -806,113 +1474,113 @@ RESPONSIVE
         padding: 32px 0;
         justify-content: space-between;
     }
-
+    
     .navbar__logo {
         font-size: clamp(36px, 3.2vw, 54px);
         letter-spacing: 0.16em;
     }
-
+    
     .navbar__toggle {
         display: none;
     }
-
+    
     .navbar__links,
     .navbar__links--open {
         position: static;
         inset: auto;
         transform: none;
-
+        
         width: auto;
         height: auto;
         max-width: none;
-
+        
         padding: 0;
-
+        
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
         gap: 40px;
-
+        
         background: none;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
-
+        
         border: none;
         border-radius: 0;
         box-shadow: none;
-
+        
         z-index: auto;
     }
-
+    
     .navbar__links a {
         font-size: 1.3rem;
         letter-spacing: 0.16em;
     }
-
+    
     .navbar__social-links,
     .navbar.menu-open .navbar__social-links {
         display: none;
     }
-
+    
     .hero-content {
         transform: translateY(-80px);
         padding: 0;
     }
-
+    
     .hero-title {
         font-size: clamp(1.5rem, 3vw, 3rem);
         letter-spacing: 0.18em;
     }
-
+    
     .header.menu-open .hero-title {
         opacity: 1;
     }
-
+    
     .header.menu-open .hero-content .social-links {
         display: flex;
     }
-
+    
     .music-page {
-        padding: 32px 0 64px;
+        padding: 32px 0 0px;
     }
-
+    
     .section-heading {
         margin-bottom: 56px;
     }
-
+    
     .music-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
+    
     .playlist-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
+        grid-template-columns: repeat(3, 1fr);
+    }
     .social-links {
         gap: 24px;
     }
-
+    
     .social-links a {
         width: 44px;
         height: 44px;
     }
-
+    
     .spotify-icon {
         width: 30px;
     }
-
+    
     .youtube-icon {
         width: 33px;
     }
-
+    
     .soundcloud-icon {
         width: 40px;
     }
-
+    
     .bandcamp-icon {
         width: 36px;
     }
-
+    
     .instagram-icon {
         width: 31px;
     }
@@ -927,3 +1595,4 @@ RESPONSIVE
 
 @media (min-width: 1536px) {
 }
+
