@@ -1,3 +1,7 @@
+/* =========================
+RESET / BASE
+========================= */
+
 *,
 *::before,
 *::after {
@@ -13,7 +17,7 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: "Montserrat", sans-serif;
-    background: #08040d;
+    background: #050814;
     color: #fff;
 }
 
@@ -28,20 +32,28 @@ a {
     text-decoration: none;
 }
 
+/* =========================
+FANLINK PAGE
+========================= */
+
 .fanlink {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 62% 38%;
+    grid-template-columns: 58% 42%;
+    background: #050814;
 }
 
-/* ARTWORK SECTION */
+/* =========================
+ARTWORK SECTION
+========================= */
 
 .fanlink__artwork {
     position: relative;
     display: grid;
     place-items: center;
     overflow: hidden;
-    background-image: url("/assets/artworks/artwork-square-fade-away.png");
+
+    background-image: var(--fanlink-background);
     background-position: center;
     background-size: cover;
 }
@@ -50,18 +62,36 @@ a {
     content: "";
     position: absolute;
     inset: 0;
-    backdrop-filter: blur(22px);
+
     background:
-    radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 38%),
-    rgba(4, 6, 16, 0.22);
-    transform: scale(1.04);
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.10),
+            transparent 38%
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(5, 8, 20, 0.28),
+            rgba(5, 8, 20, 0.58)
+        );
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    transform: scale(1.06);
 }
 
 .artwork-card {
     position: relative;
     width: min(42vw, 520px);
     aspect-ratio: 1;
-    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
+
+    border-radius: 2px;
+    overflow: hidden;
+
+    box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.36),
+        0 0 60px rgba(120, 150, 255, 0.08);
 }
 
 .artwork-card__image {
@@ -70,138 +100,373 @@ a {
     object-fit: cover;
 }
 
-
-/* LINKS SECTION */
-
+/* =========================
+CONTENT SECTION
+========================= */
 
 .fanlink__content {
+    position: relative;
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
-    padding: clamp(32px, 4vw, 64px);
-    /* background:
-    linear-gradient(180deg, rgba(13, 12, 16, 0.98), rgba(20, 4, 28, 0.98)); */
-    background-color: #2d2035 ;
+    justify-content: center;
+
+    padding: clamp(40px, 5vw, 82px);
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(7, 9, 22, 0.98),
+            rgba(10, 12, 30, 0.96)
+        );
 }
+
+.fanlink__content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: var(--fanlink-background);
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.30;
+
+    filter: blur(28px) saturate(1.1);
+    transform: scale(1.12);
+
+    z-index: 0;
+}
+
+.fanlink__content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 8, 20, 0.58),
+            rgba(5, 8, 20, 0.80)
+        );
+
+    z-index: 1;
+}
+
+.track,
+.platform-list,
+.fanlink__social-links {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+TRACK TITLE
+========================= */
 
 .track {
-    margin-bottom: 56px;
+    margin-bottom: 48px;
 }
-
 
 .track__title,
 .track__artist {
     margin: 0;
-    line-height: 1.15;
-    letter-spacing: 0.05em;
     text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
-
 }
 
 .track__title {
-    font-size: clamp(22px, 2vw, 30px);
-    font-weight: 600;
+    margin-bottom: 10px;
+
+    font-size: clamp(2rem, 4vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: 0.14em;
+
+    color: rgba(255, 255, 255, 0.94);
+
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.04);
 }
 
 .track__artist {
-    margin-top: 10px;
-    font-size: clamp(20px, 1.7vw, 26px);
+    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
     font-weight: 400;
+    letter-spacing: 0.24em;
+
+    color: rgba(255, 255, 255, 0.62);
 }
 
+/* =========================
+PLATFORM LINKS
+========================= */
+
 .platform-list {
+    width: min(100%, 620px);
+
     display: flex;
     flex-direction: column;
-    gap: 26px;
-    width: min(100%, 620px);
+    gap: 16px;
 }
 
 .platform-link {
-    /* min-height: 76px; */
+    min-height: 74px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
-    padding: 0 0 0 8px;
+
+    padding: 16px 18px;
+
+    background: rgba(10, 12, 30, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.platform-link:hover {
+    transform: translateX(6px);
+    background: rgba(255, 255, 255, 0.065);
+    border-color: rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 18px 46px rgba(0, 0, 0, 0.26),
+        0 0 34px rgba(120, 150, 255, 0.045);
 }
 
 .platform-link__logo {
-    width: 130px;
+    width: 150px;
     height: 34px;
+
     display: flex;
     align-items: center;
 }
 
-
-/* Tes SVG hériteront de cette taille si tu leur mets class="brand-logo" */
-.brand-logo {
-    width: auto;
-    height: 28px;
+.platform-link__logo img {
+    max-width: 100%;
+    max-height: 30px;
+    object-fit: contain;
 }
-
 
 .platform-link__button {
-    min-width: 150px;
-    padding: 16px 34px;
-    border: 1px solid rgba(187, 187, 187, 0.88);
-    border-radius: 10px;
-    text-align: center;
-    font-weight: 700;
-    transition:
-        transform 180ms ease,
-        border-color 180ms ease,
-        background 180ms ease;
-}
+    min-width: 112px;
 
-/* .platform-link__button {
-    border-color: transparent;
-    background: linear-gradient(135deg, #31217a, #8a2a83);
-} */
+    padding: 13px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    border-radius: 999px;
+
+    text-align: center;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.035);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        text-shadow 0.25s ease;
+}
 
 .platform-link:hover .platform-link__button {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.08);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.28);
+}
+
+/* =========================
+SOCIAL LINKS
+========================= */
+
+.fanlink__social-links {
+    margin-top: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.fanlink__social-links a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0.82;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.fanlink__social-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.fanlink__social-links img {
+    display: block;
+    max-width: none;
+    max-height: none;
+
+    filter:
+        brightness(0) invert(1)
+        drop-shadow(0 2px 8px rgba(0, 0, 0, 0.28));
+}
+
+/* Icônes mêmes tailles que le reste du site */
+
+.spotify-icon {
+    width: 30px;
+}
+
+.youtube-icon {
+    width: 33px;
+}
+
+.soundcloud-icon {
+    width: 40px;
+    transform: translateY(-1px);
+}
+
+.bandcamp-icon {
+    width: 36px;
+}
+
+.instagram-icon {
+    width: 31px;
+}
+
+.fanlink__site-link {
+    position: relative;
+    z-index: 2;
+
+    display: inline-block;
+    margin-top: 22px;
+
+    align-self: center;
+
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.fanlink__site-link:hover {
+    color: rgba(255, 255, 255, 0.82);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.22);
     transform: translateY(-2px);
-    border-color: #fff;
-    background: rgba(255, 255, 255, 0.06);
 }
 
-.platform-link--featured:hover .platform-link__button {
-    background: linear-gradient(135deg, #3b2b96, #9d3295);
-}
+/* =========================
+RESPONSIVE
+========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .fanlink {
         grid-template-columns: 1fr;
     }
-    
+
     .fanlink__artwork {
-        min-height: 56vh;
+        min-height: 58vh;
     }
-    
+
     .artwork-card {
-        width: min(72vw, 420px);
+        width: min(70vw, 440px);
+
+        box-shadow:
+            0 30px 80px rgba(0, 0, 0, 0.38),
+            0 0 60px rgba(80, 180, 255, 0.08);
     }
-    
+
     .fanlink__content {
-        min-height: 44vh;
+        min-height: 42vh;
+        align-items: center;
+        text-align: center;
+    }
+
+    .platform-list {
+        margin-inline: auto;
+    }
+
+    .fanlink__social-links {
+        justify-content: center;
     }
 }
 
-@media (max-width: 520px) {
-    .fanlink__content {
-        padding: 28px 20px;
+@media (max-width: 560px) {
+    .fanlink__artwork {
+        min-height: 48vh;
     }
-    
+
+    .artwork-card {
+        width: min(76vw, 340px);
+    }
+
+    .fanlink__content {
+        padding: 36px 20px;
+    }
+
+    .track {
+        margin-bottom: 34px;
+    }
+
+    .track__title {
+        font-size: 2.2rem;
+        letter-spacing: 0.10em;
+    }
+
+    .track__artist {
+        font-size: 0.9rem;
+        letter-spacing: 0.18em;
+    }
+
     .platform-link {
         min-height: 68px;
+        padding: 14px;
         gap: 16px;
     }
-    
+
     .platform-link__logo {
-        width: 160px;
+        width: 132px;
     }
-    
+
     .platform-link__button {
-        min-width: 104px;
-        padding: 13px 22px;
+        min-width: 88px;
+        padding: 12px 18px;
+        font-size: 0.72rem;
+    }
+
+    .fanlink__social-links {
+        margin-top: 36px;
+        gap: 18px;
+        flex-wrap: wrap;
     }
 }
