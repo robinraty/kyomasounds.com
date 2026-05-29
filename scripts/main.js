@@ -10,7 +10,7 @@ const header = document.querySelector(".header, .music-header");
 
 // Éléments qui apparaissent au scroll
 const revealElements = document.querySelectorAll(
-    ".section-heading, .music-card, .playlist-card, .about-story, .contact-card"
+    ".section-heading, .playlist-card, .about-story, .contact-card"
 );
 
 
