@@ -51,7 +51,62 @@ GLOBAL LAYOUT
 .container {
     width: min(100% - 40px, 1500px);
     margin-inline: auto;
+}
+
+
+/* =========================
+SHARED INTERNAL PAGES BACKGROUND
+Music / Playlists / About / Contact
+========================= */
+
+.music-body,
+.about-body,
+.contact-body {
+    min-height: 100vh;
+    color: white;
+    position: relative;
+    background: #050814;
+}
+
+.music-body::before,
+.about-body::before,
+.contact-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
     
+    background-image: url(../assets/background-images/image00001.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    filter: blur(16px);
+    transform: scale(1.08);
+    opacity: 0.85;
+    
+    z-index: -2;
+}
+
+.music-body::after,
+.about-body::after,
+.contact-body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    
+    background:
+        radial-gradient(
+            circle at 50% 18%,
+            rgba(120, 180, 210, 0.16),
+            transparent 34%
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(5, 8, 20, 0.86),
+            rgba(8, 10, 24, 0.80)
+        );
+    
+    z-index: -1;
 }
 
 
@@ -501,61 +556,6 @@ FOOTER
 
 
 /* =========================
-MUSIC PAGE
-Grid releases, cards...
-========================= */
-
-.music-body {
-    min-height: 100vh;
-    color: white;
-    
-    position: relative;
-    background: #050814;
-}
-
-/* Image de fond floutée */
-
-.music-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    
-    background-image: url(../assets/background-images/image00001.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    filter: blur(16px);
-    transform: scale(1.08);
-    opacity: 0.75;
-    
-    z-index: -2;
-}
-
-/* Overlay sombre par-dessus l'image */
-
-.music-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    
-    background:
-    radial-gradient(
-        circle at 50% 18%,
-        rgba(120, 180, 210, 0.12),
-        transparent 34%
-    ),
-    linear-gradient(
-        to bottom,
-        rgba(5, 8, 20, 0.90),
-        rgba(8, 10, 24, 0.84)
-    );
-    
-    z-index: -1;
-}
-
-
-/* =========================
 PAGE HEADER — PAGES INTERNES
 ========================= */
 
@@ -567,21 +567,38 @@ PAGE HEADER — PAGES INTERNES
     z-index: 10;
 }
 
+.music-header--overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    background: transparent;
+}
+
 
 /* =========================
-MUSIC PAGE CONTENT
+SHARED INTERNAL PAGE CONTENT
 ========================= */
 
-.music-page {
+.music-page,
+.about-page,
+.contact-page {
     color: white;
-    
-    padding: 32px 0 0px;
-    
+    padding: 0px 0 0;
     position: relative;
     z-index: 1;
 }
 
-.music-section {
+.music-page {
+    padding: 0;
+}
+
+.music-section,
+.playlist-section,
+.about-section,
+.contact-section {
     max-width: none;
     margin: 0;
 }
@@ -595,7 +612,8 @@ MUSIC PAGE CONTENT
 
 .section-heading h1 {
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-size: clamp(2rem, 5.4vw, 3.6rem);
+
     
     font-weight: 300;
     letter-spacing: 0.16em;
@@ -603,7 +621,7 @@ MUSIC PAGE CONTENT
     
     transform: translateX(-0.04em);
     
-    margin-bottom: 0px;
+    margin-bottom: 0;
     
     text-shadow:
     0 2px 14px rgba(0, 0, 0, 0.35),
@@ -611,14 +629,191 @@ MUSIC PAGE CONTENT
 }
 
 .section-heading p {
-    
     font-size: 1rem;
     line-height: 1.8;
     
     color: rgba(255, 255, 255, 0.68);
 }
 
-/* Music Grid */
+
+/* =========================
+MUSIC PAGE
+Grid releases, cards...
+========================= */
+
+/* =========================
+LATEST RELEASE HERO
+========================= */
+
+/* .latest-release-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 120px 0 64px;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(5, 8, 20, 0.82),
+            rgba(5, 8, 20, 0.58),
+            rgba(5, 8, 20, 0.90)
+        ),
+        url("../assets/artworks/Kyoma - Where We Belong (Artwork).jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+.latest-release-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 120px 0 64px;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(5, 8, 20, 0.82),
+            rgba(5, 8, 20, 0.58),
+            rgba(5, 8, 20, 0.90)
+        ),
+        url("../assets/background-images/koharu-background-image.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.latest-release-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    
+    z-index: 0;
+}
+
+
+
+.latest-release-hero__inner {
+    position: relative;
+    z-index: 1;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    
+    align-items: center;
+}
+
+.latest-release-hero__cover {
+    max-width: 430px;
+    margin-inline: auto;
+    
+    border-radius: 22px;
+    overflow: hidden;
+    
+    box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    0 0 60px rgba(120, 180, 210, 0.12);
+}
+
+.latest-release-hero__cover img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.latest-release-hero__content {
+    max-width: 620px;
+    text-align: center;
+}
+
+.latest-release-hero__label {
+    display: inline-block;
+    margin-bottom: 18px;
+    
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.58);
+}
+
+.latest-release-hero__content h1 {
+    margin-bottom: 24px;
+    
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.95);
+    
+    text-shadow:
+    0 2px 18px rgba(0, 0, 0, 0.45),
+    0 0 28px rgba(255, 255, 255, 0.10);
+}
+
+.latest-release-hero__content p {
+    margin-bottom: 32px;
+    
+    font-size: 1rem;
+    line-height: 1.8;
+    
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.latest-release-hero__link {
+    display: inline-block;
+    
+    padding: 14px 30px;
+    
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.08);
+    
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.latest-release-hero__link:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.36);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
+}
+
+
+.music-section {
+    padding-top: 72px;
+}
 
 .music-grid {
     display: grid;
@@ -656,9 +851,6 @@ MUSIC PAGE CONTENT
 .music-card__image-link {
     display: block;
     aspect-ratio: 1 / 1;
-    /* aspect-ratio: 4 / 3; */
-    /* aspect-ratio: 6 / 5; */
-    
     overflow: hidden;
 }
 
@@ -717,11 +909,6 @@ MUSIC PAGE CONTENT
 PLAYLISTS PAGE
 ========================= */
 
-.playlist-section {
-    max-width: none;
-    margin: 0;
-}
-
 .playlist-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -750,67 +937,10 @@ PLAYLISTS PAGE
     line-height: 1.7;
 }
 
+
 /* =========================
 ABOUT PAGE
 ========================= */
-
-.about-body {
-    min-height: 100vh;
-    color: white;
-    
-    position: relative;
-    background: #050814;
-}
-
-/* Même background que Music / Playlists */
-
-.about-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    
-    background-image: url(../assets/background-images/image00001.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    filter: blur(16px);
-    transform: scale(1.08);
-    opacity: 0.62;
-    
-    z-index: -2;
-}
-
-.about-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    
-    background:
-    linear-gradient(
-    to bottom,
-    rgba(5, 8, 20, 0.97),
-    rgba(8, 10, 24, 0.92)
-    );
-    
-    z-index: -1;
-}
-
-/* Page */
-
-.about-page {
-    color: white;
-    padding: 32px 0 0;
-    position: relative;
-    z-index: 1;
-}
-
-.about-section {
-    max-width: none;
-    margin: 0;
-}
-
-/* Story cards */
 
 .about-story {
     display: grid;
@@ -912,270 +1042,13 @@ ABOUT PAGE
     transform: scale(1.04);
 }
 
-/* =========================
-CONTACT PAGE
-========================= */
-
-.contact-body {
-    min-height: 100vh;
-    color: white;
-    
-    position: relative;
-    background: #050814;
-}
-
-/* Même background que Music / Playlists / About */
-
-.contact-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    
-    background-image: url(../assets/background-images/image00001.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    filter: blur(16px);
-    transform: scale(1.08);
-    opacity: 0.62;
-    
-    z-index: -2;
-}
-
-.contact-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    
-    background:
-    linear-gradient(
-    to bottom,
-    rgba(5, 8, 20, 0.97),
-    rgba(8, 10, 24, 0.92)
-    );
-    
-    z-index: -1;
-}
-
-.contact-page {
-    color: white;
-    padding: 32px 0 0;
-    position: relative;
-    z-index: 1;
-}
-
-.contact-section {
-    max-width: none;
-    margin: 0;
-}
-
-.contact-card {
-    min-height: 520px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    
-    
-    padding: 64px 32px;
-    
-    background: rgba(10, 12, 30, 0.62);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 24px;
-    
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
-}
-
-.contact-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    
-    background-image:
-    linear-gradient(
-    rgba(8, 10, 24, 0.72),
-    rgba(8, 10, 24, 0.82)
-    ),
-    url("../assets/background-images/image00001.png");
-    
-    background-size: cover;
-    background-position: center;
-    opacity: 0.35;
-    
-    filter: blur(2px);
-    transform: scale(1.04);
-    
-    z-index: -1;
-}
-
-.contact-card__content {
-    max-width: 760px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    
-}
-
-.contact-card__label {
-    display: inline-block;
-    
-    margin-bottom: 22px;
-    
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    
-    color: rgba(255, 255, 255, 0.52);
-}
-
-.contact-card__content h2 {
-    margin-bottom: 28px;
-    
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(2.4rem, 7vw, 5rem);
-    font-weight: 300;
-    line-height: 1.05;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    
-    color: rgba(255, 255, 255, 0.94);
-    
-    text-shadow:
-    0 2px 14px rgba(0, 0, 0, 0.35),
-    0 0 22px rgba(255, 255, 255, 0.08);
-}
-
-.contact-card__content p {
-    max-width: 680px;
-    
-    margin: 0 auto 34px;
-    
-    font-size: 1rem;
-    line-height: 1.9;
-    
-    color: rgba(255, 255, 255, 0.68);
-}
-
-.contact-card__email {
-    display: inline-block;
-    
-    margin-bottom: 34px;
-    
-    font-size: clamp(1rem, 3vw, 1.35rem);
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    
-    color: rgba(255, 255, 255, 0.9);
-    
-    transition:
-    opacity 0.25s ease,
-    text-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-.contact-card__email:hover {
-    opacity: 1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
-}
-
-.contact-card__social-links {
-    gap: 26px;
-}
-
-.contact-card__social-links a {
-    width: 46px;
-    height: 46px;
-}
-
-/* =========================
-CONTACT RESPONSIVE
-========================= */
-
-@media (max-width: 700px) {
-    .contact-card {
-        min-height: auto;
-        padding: 48px 24px;
-    }
-    
-    .contact-card__content h2 {
-        letter-spacing: 0.08em;
-    }
-    
-    .contact-card__content p {
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
-    
-    .contact-card__social-links {
-        gap: 18px;
-        flex-wrap: wrap;
-    }
-}
-
 
 /* =========================
 CONTACT PAGE
 ========================= */
-
-.contact-body {
-    min-height: 100vh;
-    color: white;
-    position: relative;
-    background: #050814;
-    overflow: hidden;
-}
-
-.contact-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    
-    background-image: url(../assets/background-images/image00001.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    filter: blur(16px);
-    transform: scale(1.08);
-    opacity: 0.62;
-    
-    z-index: -2;
-}
-
-.contact-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    
-    background:
-    linear-gradient(
-    to bottom,
-    rgba(5, 8, 20, 0.97),
-    rgba(8, 10, 24, 0.92)
-    );
-    
-    z-index: -1;
-}
-
-.contact-page {
-    color: white;
-    padding: 32px 0 0;
-    position: relative;
-    z-index: 1;
-}
 
 .contact-section {
     width: 100%;
-    max-width: none;
-    margin: 0;
 }
 
 .contact-section .section-heading {
@@ -1232,7 +1105,6 @@ CONTACT PAGE
     transform 0.4s ease,
     filter 0.4s ease;
 }
-
 
 .contact-card:hover::before {
     opacity: 0.5;
@@ -1317,6 +1189,7 @@ CONTACT PAGE
     height: 46px;
 }
 
+
 /* =========================
 SCROLL REVEAL ANIMATION
 ========================= */
@@ -1334,91 +1207,6 @@ SCROLL REVEAL ANIMATION
     transform: translateY(0);
 }
 
-/* =========================
-CONTACT RESPONSIVE
-========================= */
-
-@media (max-width: 700px) {
-    .contact-body {
-        overflow: auto;
-    }
-    
-    .contact-page {
-        padding: 32px 0 0;
-    }
-    
-    .contact-card {
-        min-height: auto;
-        padding: 44px 24px;
-    }
-    
-    .contact-card__content h2 {
-        letter-spacing: 0.08em;
-    }
-    
-    .contact-card__content p {
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
-    
-    .contact-card__social-links {
-        gap: 18px;
-        flex-wrap: wrap;
-    }
-}
-
-
-
-/* =========================
-ABOUT RESPONSIVE
-========================= */
-
-@media (min-width: 900px) {
-    .about-story {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 56px;
-        
-        padding: 40px;
-        margin-bottom: 56px;
-    }
-    
-    .about-story--reverse {
-        grid-template-columns: 0.9fr 1.1fr;
-    }
-    
-    .about-story__image {
-        aspect-ratio: 1 / 1.08;
-    }
-}
-
-@media (min-width: 1280px) {
-    .about-story {
-        gap: 72px;
-        padding: 48px;
-    }
-}
-
-@media (max-width: 600px) {
-    .about-story {
-        padding: 22px;
-        border-radius: 22px;
-    }
-    
-    .about-story__text h2 {
-        font-size: 1.55rem;
-        letter-spacing: 0.07em;
-    }
-    
-    .about-story__text p {
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
-    
-    .about-story__image {
-        border-radius: 18px;
-        aspect-ratio: 1 / 1;
-    }
-}
 
 /* =========================
 RESPONSIVE
@@ -1461,19 +1249,38 @@ RESPONSIVE
     }
 }
 
+
 /* ≥ 768px : tablettes */
 
 @media (min-width: 768px) {
-    .music-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .container {
         width: min(100% - 64px, 1500px);
     }
     
+    .music-grid,
     .playlist-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ≥ 900px : About layout */
+
+@media (min-width: 900px) {
+    .about-story {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 56px;
+        
+        padding: 40px;
+        margin-bottom: 56px;
+    }
+    
+    .about-story--reverse {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+    
+    .about-story__image {
+        aspect-ratio: 1 / 1.08;
     }
 }
 
@@ -1481,6 +1288,10 @@ RESPONSIVE
 /* ≥ 1024px : desktop */
 
 @media (min-width: 1024px) {
+    .container {
+        width: min(100% - 128px, 1500px);
+    }
+    
     .navbar {
         padding: 32px 0;
         justify-content: space-between;
@@ -1534,10 +1345,6 @@ RESPONSIVE
         display: none;
     }
     
-    .container {
-        width: min(100% - 128px, 1500px);
-    }
-    
     .hero-content {
         transform: translateY(-80px);
         padding: 0;
@@ -1556,36 +1363,46 @@ RESPONSIVE
         display: flex;
     }
     
-    .music-page {
-        padding: 32px 0 0px;
+    .latest-release-hero {
+        min-height: 100vh;
+        /* padding: 80px 0; */
     }
     
-    .section-heading {
-        margin-bottom: 24px;
+    .latest-release-hero__inner {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 80px;
     }
     
-    .music-grid {
+    .latest-release-hero__cover {
+        max-width: 460px;
+        margin-inline: 0;
+    }
+    
+    .latest-release-hero__content {
+        text-align: left;
+    }
+    
+    .music-grid,
+    .playlist-grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
-    .music-card__image-link {
-        /* aspect-ratio: 4 / 3; */
+    .music-section .music-card__image-link {
         aspect-ratio: 6 / 5;
     }
     
+    .playlist-section .music-card__image-link {
+        aspect-ratio: 1 / 1;
+    }
     
     .music-card__content {
-        padding: 18px 22px 18px;
+        padding: 18px 22px;
     }
     
     .music-card__content p {
         margin-bottom: 18px;
     }
     
-    
-    .playlist-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
     .social-links {
         gap: 24px;
     }
@@ -1616,13 +1433,61 @@ RESPONSIVE
     }
 }
 
+
 /* ≥ 1280px : desktop large */
 
 @media (min-width: 1280px) {
+    .about-story {
+        gap: 72px;
+        padding: 48px;
+    }
 }
 
-/* ≥ 1536px : très grands écrans */
 
-@media (min-width: 1536px) {
+/* ≤ 700px : Contact mobile fixes */
+
+@media (max-width: 700px) {
+    .contact-card {
+        min-height: auto;
+        padding: 44px 24px;
+    }
+    
+    .contact-card__content h2 {
+        letter-spacing: 0.08em;
+    }
+    
+    .contact-card__content p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    
+    .contact-card__social-links {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
 }
 
+
+/* ≤ 600px : About mobile fixes */
+
+@media (max-width: 600px) {
+    .about-story {
+        padding: 22px;
+        border-radius: 22px;
+    }
+    
+    .about-story__text h2 {
+        font-size: 1.55rem;
+        letter-spacing: 0.07em;
+    }
+    
+    .about-story__text p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    
+    .about-story__image {
+        border-radius: 18px;
+        aspect-ratio: 1 / 1;
+    }
+}
