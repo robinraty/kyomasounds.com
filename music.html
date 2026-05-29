@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+    
     <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css">
-
+    
     <!-- JavaScript -->
     <script src="scripts/main.js" defer></script>
-
+    
     <title>Music | Kyoma Sounds</title>
 </head>
 
 <body class="music-body">
-
+    
     <header class="music-header music-header--overlay">
         <div class="container">
             <nav class="navbar">
                 <a href="index.html" class="navbar__logo">KYOMA</a>
-
+                
                 <button class="navbar__toggle" aria-label="Open menu">
                     <span></span>
                     <span></span>
                 </button>
-
+                
                 <ul class="navbar__links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="music.html" class="active">Music</a></li>
@@ -37,7 +37,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-
+                
                 <div class="navbar__social-links">
                     <a href="#" aria-label="Spotify"><img src="assets/icons/spotify.svg" alt="Spotify" class="spotify-icon"></a>
                     <a href="#" aria-label="YouTube"><img src="assets/icons/youtube.svg" alt="YouTube" class="youtube-icon"></a>
@@ -48,17 +48,17 @@
             </nav>
         </div>
     </header>
-
+    
     <main class="music-page">
-
+        
         <!-- Latest Release Hero -->
         <section class="latest-release-hero">
             <div class="container latest-release-hero__inner">
-
+                
                 <div class="latest-release-hero__cover">
                     <img src="assets/artworks/kyoma & Sora - Koharu artwork.png" alt="Cover artwork for Where We Belong">
                 </div>
-
+                
                 <div class="latest-release-hero__content">
                     <span class="latest-release-hero__label">Kyoma & Sora</span>
                     <h1>Koharu</h1>
@@ -67,18 +67,18 @@
                     </p>
                     <a href="fanlinks/koharu.html" class="latest-release-hero__link">Listen now</a>
                 </div>
-
+                
             </div>
         </section>
-
-                <!-- Latest Release Hero -->
+        
+        <!-- Latest Release Hero -->
         <!-- <section class="latest-release-hero">
             <div class="container latest-release-hero__inner">
-
+                
                 <div class="latest-release-hero__cover">
                     <img src="assets/background-images/where-we-belong-background-image.png" alt="Cover artwork for Where We Belong">
                 </div>
-
+                
                 <div class="latest-release-hero__content">
                     <span class="latest-release-hero__label">New release</span>
                     <h1>Where We Belong</h1>
@@ -87,22 +87,52 @@
                     </p>
                     <a href="fanlinks/where-we-belong.html" class="latest-release-hero__link">Listen now</a>
                 </div>
-
+                
             </div>
         </section> -->
-
+        
         <!-- All Releases -->
         <section class="music-section">
             <div class="container">
-
+                
                 <div class="section-heading">
-                    <h2>All releases</h2>
-                    <p>Soft lofi, nostalgic melodies and peaceful sounds 🌸</p>
+                    <div>
+                        <h2>All releases</h2>
+                        <p>Soft lofi, nostalgic melodies and peaceful sounds 🌸</p>
+                    </div>
+                    
+                    <div class="music-filters" aria-label="Sort releases">
+                        <button class="music-filter active newestFilter" data-sort="newest"> New</button>
+                        <button class="music-filter oldestFilter" data-sort="oldest">Old</button>
+                        <button class="music-filter softestFilter" data-sort="softest">Softest</button>
+                    </div>
                 </div>
-
+                
                 <div class="music-grid">
 
-                    <article class="music-card">
+                    <!-- Koharu -->
+                    <article 
+                        class="music-card"
+                        data-date="2026-05-08"
+                        data-softness="4"
+                    >
+                        <a href="fanlinks/koharu.html" class="music-card__image-link">
+                            <img src="assets/artworks/kyoma & Sora - Koharu artwork.png" alt="Cover artwork for Koharu">
+                        </a>
+                        <div class="music-card__content">
+                            <h2>Koharu</h2>
+                            <p>Kyoma & Sora · 2026</p>
+                            <a href="fanlinks/koharu.html" class="music-card__link">Listen now</a>
+                        </div>
+                    </article>
+
+                    
+                    <!-- Where We Belong -->
+                    <article 
+                        class="music-card"
+                        data-date="2024-12-27"
+                        data-softness="8"
+                    >
                         <a href="fanlinks/where-we-belong.html" class="music-card__image-link">
                             <img src="assets/artworks/Kyoma - Where We Belong (Artwork).jpg" alt="Cover artwork for Where We Belong">
                         </a>
@@ -112,8 +142,13 @@
                             <a href="fanlinks/where-we-belong.html" class="music-card__link">Listen now</a>
                         </div>
                     </article>
-
-                    <article class="music-card">
+                    
+                    <!-- Akemi -->
+                    <article 
+                        class="music-card"
+                        data-date="2024-11-22"
+                        data-softness="4"
+                    >
                         <a href="fanlinks/akemi.html" class="music-card__image-link">
                             <img src="assets/artworks/Kyoma & Bleasy - Akemi (Artwork).jpeg" alt="Cover artwork for Akemi">
                         </a>
@@ -123,8 +158,13 @@
                             <a href="fanlinks/akemi.html" class="music-card__link">Listen now</a>
                         </div>
                     </article>
-
-                    <article class="music-card">
+                    
+                    <!-- Maiko -->
+                    <article 
+                        class="music-card"
+                        data-date="2024-10-11"
+                        data-softness="3.5"
+                    >
                         <a href="fanlinks/maiko.html" class="music-card__image-link">
                             <img src="assets/artworks/Kyoma - Maiko (Artwork).jpeg" alt="Cover artwork for Maiko">
                         </a>
@@ -134,8 +174,13 @@
                             <a href="fanlinks/maiko.html" class="music-card__link">Listen now</a>
                         </div>
                     </article>
-
-                    <article class="music-card">
+                    
+                    <!-- Heiko -->
+                    <article 
+                        class="music-card"
+                        data-date="2024-04-30"
+                        data-softness="3"
+                    >
                         <a href="fanlinks/heiko.html" class="music-card__image-link">
                             <img src="assets/artworks/Kyoma & Sora - Heiko (Artwork).jpg" alt="Cover artwork for Heiko">
                         </a>
@@ -145,8 +190,13 @@
                             <a href="fanlinks/heiko.html" class="music-card__link">Listen now</a>
                         </div>
                     </article>
-
-                    <article class="music-card">
+                    
+                    <!-- Setsunai -->
+                    <article 
+                        class="music-card"                             
+                        data-date="2023-10-10"
+                        data-softness="5"
+                    >
                         <a href="fanlinks/setsunai.html" class="music-card__image-link">
                             <img src="assets/artworks/Breathing_ART_3840x2160 copie.jpeg" alt="Cover artwork for Setsunai">
                         </a>
@@ -156,66 +206,69 @@
                             <a href="fanlinks/setsunai.html" class="music-card__link">Listen now</a>
                         </div>
                     </article>
-
-                    <article class="music-card">
+                    
+                    <!-- Loving Choice -->
+                    <article class="music-card"
+                        data-date="2023-02-23"
+                        data-softness="6"
+                        >
                         <a href="fanlinks/loving-choice.html" class="music-card__image-link">
                             <img src="assets/artworks/Kyoma - Loving Choice (Artwork No Logo).jpeg" alt="Cover artwork for Loving Choice">
                         </a>
                         <div class="music-card__content">
-                            <h2>Loving Choice</h2>
-                            <p>Single · 2023</p>
-                            <a href="fanlinks/loving-choice.html" class="music-card__link">Listen now</a>
+                        <h2>Loving Choice</h2>
+                        <p>Single · 2023</p>
+                        <a href="fanlinks/loving-choice.html" class="music-card__link">Listen now</a>
                         </div>
                     </article>
-
                 </div>
+        </div>
+    </section>
+    
+    
+    <!-- =========================
+    FOOTER
+    ========================== -->
+    
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__content">
+                
+                <a href="index.html" class="site-footer__logo">KYOMA</a>
+                
+                <p class="site-footer__tagline">Relaxing sounds for quiet moments and inner peace.</p>
+                
+                <!-- Social Icons | Footer -->
+                <div class="social-links site-footer__social-links">
+                    <a href="#" aria-label="Spotify">
+                        <img src="assets/icons/spotify.svg" alt="Spotify" class="spotify-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="YouTube">
+                        <img src="assets/icons/youtube.svg" alt="YouTube" class="youtube-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="SoundCloud">
+                        <img src="assets/icons/soundcloud.svg" alt="SoundCloud" class="soundcloud-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="Bandcamp">
+                        <img src="assets/icons/bandcamp.svg" alt="Bandcamp" class="bandcamp-icon">
+                    </a>
+                    
+                    <a href="#" aria-label="Instagram">
+                        <img src="assets/icons/instagram.svg" alt="Instagram" class="instagram-icon">
+                    </a>
+                </div>
+                
+                <p class="site-footer__copyright">
+                    © 2026 Kyoma Sounds. All rights reserved.
+                </p>
+                
             </div>
-        </section>
-
-
-                    <!-- =========================
-            FOOTER
-            ========================== -->
-
-            <footer class="site-footer">
-                <div class="container">
-                    <div class="site-footer__content">
-
-                        <a href="index.html" class="site-footer__logo">KYOMA</a>
-
-                        <p class="site-footer__tagline">Relaxing sounds for quiet moments and inner peace.</p>
-
-                        <!-- Social Icons | Footer -->
-                        <div class="social-links site-footer__social-links">
-                            <a href="#" aria-label="Spotify">
-                                <img src="assets/icons/spotify.svg" alt="Spotify" class="spotify-icon">
-                            </a>
-
-                            <a href="#" aria-label="YouTube">
-                                <img src="assets/icons/youtube.svg" alt="YouTube" class="youtube-icon">
-                            </a>
-
-                            <a href="#" aria-label="SoundCloud">
-                                <img src="assets/icons/soundcloud.svg" alt="SoundCloud" class="soundcloud-icon">
-                            </a>
-
-                            <a href="#" aria-label="Bandcamp">
-                                <img src="assets/icons/bandcamp.svg" alt="Bandcamp" class="bandcamp-icon">
-                            </a>
-
-                            <a href="#" aria-label="Instagram">
-                                <img src="assets/icons/instagram.svg" alt="Instagram" class="instagram-icon">
-                            </a>
-                        </div>
-
-                        <p class="site-footer__copyright">
-                            © 2026 Kyoma Sounds. All rights reserved.
-                        </p>
-
-                    </div>
-                </div>
-            </footer>
-    </main>
+        </div>
+    </footer>
+</main>
 
 </body>
 </html>

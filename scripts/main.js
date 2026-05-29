@@ -1,32 +1,12 @@
 // =================================
-// 🎯 1. Sélection DOM
+// 🍔 Navbar / mobile menu
 // =================================
 
-// Navbar / menu mobile
 const toggleButton = document.querySelector(".navbar__toggle");
 const navLinks = document.querySelector(".navbar__links");
 const navbar = document.querySelector(".navbar");
 const header = document.querySelector(".header, .music-header");
 
-// Éléments qui apparaissent au scroll
-const revealElements = document.querySelectorAll(
-    ".section-heading, .playlist-card, .about-story, .contact-card"
-);
-
-
-// =================================
-// 🧠 2. Variables globales / état
-// =================================
-
-// Pour le moment, pas besoin de variable globale.
-// On garde cette section pour la structure du fichier.
-
-
-// =================================
-// 🎊 3. Fonctions (logique métier)
-// =================================
-
-// Ouvre / ferme le menu mobile
 function toggleMobileMenu() {
     navLinks.classList.toggle("navbar__links--open");
     toggleButton.classList.toggle("navbar__toggle--open");
@@ -37,7 +17,19 @@ function toggleMobileMenu() {
     }
 }
 
-// Active l’animation quand un élément entre dans l’écran
+if (toggleButton) {
+    toggleButton.addEventListener("click", toggleMobileMenu);
+}
+
+
+// =================================
+// ✨ Scroll reveal
+// =================================
+
+const revealElements = document.querySelectorAll(
+    ".section-heading, .playlist-card, .about-story, .contact-card"
+);
+
 function revealOnScroll(entries) {
     entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -46,17 +38,10 @@ function revealOnScroll(entries) {
     });
 }
 
-
-// =================================
-// ⚙️ 4. Initialisation
-// =================================
-
-// Création de l’observer pour les animations au scroll
 const scrollRevealObserver = new IntersectionObserver(revealOnScroll, {
     threshold: 0.15
 });
 
-// Ajoute la classe de départ et observe chaque élément
 revealElements.forEach(function(element) {
     element.classList.add("reveal");
     scrollRevealObserver.observe(element);
@@ -64,8 +49,47 @@ revealElements.forEach(function(element) {
 
 
 // =================================
-// 🧲 5. Événements (interactions)
+// 🎵 Music sort
 // =================================
 
-// Click sur le burger menu
-toggleButton.addEventListener("click", toggleMobileMenu);
+const musicGrid = document.querySelector(".music-grid");
+const musicFilterButtons = document.querySelectorAll(".music-filter");
+
+function sortMusicCards(sortType) {
+    const musicCards = Array.from(document.querySelectorAll(".music-card"));    
+
+    musicCards.sort(function(a, b) {
+        if (sortType === "newest") {
+            return b.dataset.date.localeCompare(a.dataset.date);
+        }
+
+        if (sortType === "oldest") {
+            return a.dataset.date.localeCompare(b.dataset.date);
+        }
+
+        if (sortType === "softest") {
+            return Number(b.dataset.softness) - Number(a.dataset.softness);
+        }
+    });
+
+    musicCards.forEach(function(card) {
+        musicGrid.appendChild(card);
+    });
+}
+
+if (musicGrid) {
+    musicFilterButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const sortType = button.dataset.sort;
+
+            musicFilterButtons.forEach(function(button) {
+                button.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            sortMusicCards(sortType);
+        });
+    });
+}
+
