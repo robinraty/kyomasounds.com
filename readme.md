@@ -1,44 +1,41 @@
-# KYOMASOUNDS 🌙
+# Kyoma Sounds 🌙
 
-Official artist website for Kyoma, built with HTML, CSS and JavaScript.
+Official artist website for Kyoma.
+
+A calm, atmospheric space for my music, playlists and release fanlinks, built from scratch with HTML, CSS and JavaScript.
 
 ## Overview
-KYOMASOUNDS is an immersive music portfolio and fanlink platform designed to showcase Kyoma’s artistic universe, releases, playlists, and digital presence through a premium atmospheric web experience.
+
+Kyoma Sounds is my personal artist website.  
+It brings together my releases, playlists, visual identity and streaming links in one cohesive place, without relying only on third-party fanlink pages.
+
+The goal was to create something simple, immersive and personal: a digital home for the Kyoma universe.
 
 ## Features
-- Fullscreen cinematic hero section
-- Custom branding and visual identity
-- Responsive navigation
-- Streaming platform integration
+
+- Cinematic fullscreen homepage
+- Responsive design for desktop and mobile
+- Music release grid
+- Dedicated fanlink pages for each track
 - Playlist showcase
-- Dedicated fanlink pages for releases
-- Modern, scalable project structure
-- Mobile-first development approach
+- Custom visual identity
+- Optimized images and video assets
+- Streaming links to Spotify, Apple Music, YouTube and SoundCloud
 
 ## Tech Stack
+
 - HTML5
 - CSS3
 - JavaScript
 
-## Project Goals
-- Build a professional artist website
-- Create a cohesive digital brand identity
-- Showcase web development and design skills
-- Replace third-party fanlink services with custom pages
+## Built With
 
-## Status
-Currently in active development 🚧
-
-## Future Improvements
-- Animated visual effects
-- Advanced responsive polish
-- Release-specific fanlink pages
-- Interactive transitions
-- Enhanced accessibility
-- SEO optimization
+This project was built as my first complete artist website, with a focus on atmosphere, visual coherence, clean structure and responsive design.
 
 ## Author
+
 Robin Raty
 
 ## Brand
-Kyoma — Music for Inner Peace
+
+Kyoma — Music for inner peace
