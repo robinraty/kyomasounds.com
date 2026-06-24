@@ -1516,6 +1516,19 @@ RESPONSIVE
 }
 
 
+
+@media (max-width: 1024px) {
+      .section-heading {
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .section-heading h1 {
+        transform: none;
+    }
+}
+
+
 /* ≤ 700px : Contact mobile fixes */
 
 @media (max-width: 700px) {
