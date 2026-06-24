@@ -75,7 +75,7 @@ Music / Playlists / About / Contact
     position: fixed;
     inset: 0;
     
-    background-image: url(../assets/background-images/image00001.png);
+    background-image: url(../assets/background-images/main-background.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -489,8 +489,8 @@ Réutilisées par hero + navbar menu
     transform: translateY(-1px);
 }
 
-.bandcamp-icon {
-    width: 34px;
+.appleMusicIcon {
+    width: 32px;
 }
 
 .instagram-icon {
@@ -698,7 +698,7 @@ LATEST RELEASE HERO
             rgba(5, 8, 20, 0.58),
             rgba(5, 8, 20, 0.90)
         ),
-        url("../assets/background-images/koharu-background-image.png");
+        url("../assets/background-images/koharu-background.webp");
 
     background-size: cover;
     background-position: center;
@@ -961,13 +961,26 @@ PLAYLISTS PAGE
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
-    
+
     max-width: 1800px;
     margin-inline: auto;
 }
 
 .playlist-card {
     text-align: center;
+}
+
+.playlistCardLink {
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.playlistCardLink:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 6px;
+    border-radius: inherit;
 }
 
 .playlist-card__content {
@@ -994,17 +1007,17 @@ ABOUT PAGE
     display: grid;
     grid-template-columns: 1fr;
     gap: 32px;
-    
+
     margin-bottom: 40px;
     padding: 28px;
-    
+
     background: rgba(10, 12, 30, 0.62);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 24px;
-    
+
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    
+
     box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 }
 
@@ -1020,44 +1033,44 @@ ABOUT PAGE
 
 .about-story__label {
     display: inline-block;
-    
+
     margin-bottom: 16px;
-    
+
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    
+
     color: rgba(255, 255, 255, 0.52);
 }
 
 .about-story__text h2 {
     max-width: 700px;
-    
+
     margin-bottom: 22px;
-    
+
     font-family: "Montserrat", sans-serif;
     font-size: clamp(1.65rem, 4vw, 2.8rem);
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 0.10em;
     text-transform: uppercase;
-    
+
     color: rgba(255, 255, 255, 0.92);
-    
+
     text-shadow:
-    0 2px 14px rgba(0, 0, 0, 0.35),
-    0 0 22px rgba(255, 255, 255, 0.06);
+        0 2px 14px rgba(0, 0, 0, 0.35),
+        0 0 22px rgba(255, 255, 255, 0.06);
 }
 
 .about-story__text p {
     max-width: 720px;
-    
+
     margin-bottom: 18px;
-    
+
     font-size: 1rem;
-    line-height: 1.85;
-    
+    line-height: 1.8;
+
     color: rgba(255, 255, 255, 0.68);
 }
 
@@ -1067,10 +1080,10 @@ ABOUT PAGE
 
 .about-story__image {
     overflow: hidden;
-    
+
     border-radius: 20px;
     aspect-ratio: 4 / 5;
-    
+
     background: rgba(255, 255, 255, 0.06);
 }
 
@@ -1078,18 +1091,23 @@ ABOUT PAGE
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
-    filter: brightness(0.88) saturate(0.85) contrast(1.05);
-    
+
     transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
 
+.about-story_roja-img {
+    filter: brightness(0.82) saturate(0.75) contrast(1.05);   
+}
+
+.about-story_kyoma-img {
+    filter: brightness(0.88) saturate(0.85) contrast(1.05);
+
+}
 .about-story:hover .about-story__image img {
     transform: scale(1.04);
 }
-
 
 /* =========================
 CONTACT PAGE
@@ -1288,8 +1306,8 @@ RESPONSIVE
         width: 41px;
     }
     
-    .bandcamp-icon {
-        width: 36px;
+    .appleMusicIcon {
+        width: 38px;
     }
     
     .instagram-icon {
@@ -1312,23 +1330,25 @@ RESPONSIVE
 }
 
 
-/* ≥ 900px : About layout */
 
 @media (min-width: 900px) {
     .about-story {
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 56px;
-        
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+
         padding: 40px;
-        margin-bottom: 56px;
+        margin-bottom: 48px;
+
+        align-items: center;
     }
-    
+
     .about-story--reverse {
-        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-columns: 1fr 1fr;
     }
-    
+
     .about-story__image {
-        aspect-ratio: 1 / 1.08;
+        aspect-ratio: 1 / 1;
+        max-height: 520px;
     }
 }
 
@@ -1472,7 +1492,7 @@ RESPONSIVE
         width: 40px;
     }
     
-    .bandcamp-icon {
+    .appleMusicIcon {
         width: 36px;
     }
     
@@ -1486,8 +1506,12 @@ RESPONSIVE
 
 @media (min-width: 1280px) {
     .about-story {
-        gap: 72px;
-        padding: 48px;
+        gap: 56px;
+        padding: 48px 56px;
+    }
+
+    .about-story__image {
+        max-height: 540px;
     }
 }
 
@@ -1523,19 +1547,20 @@ RESPONSIVE
         padding: 22px;
         border-radius: 22px;
     }
-    
+
     .about-story__text h2 {
         font-size: 1.55rem;
         letter-spacing: 0.07em;
     }
-    
+
     .about-story__text p {
         font-size: 0.95rem;
         line-height: 1.75;
     }
-    
+
     .about-story__image {
         border-radius: 18px;
         aspect-ratio: 1 / 1;
     }
 }
+
